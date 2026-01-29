@@ -1,4 +1,0 @@
-Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials -- -j20 -l20
-Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials -- -j20 -l20
-Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials
-Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials

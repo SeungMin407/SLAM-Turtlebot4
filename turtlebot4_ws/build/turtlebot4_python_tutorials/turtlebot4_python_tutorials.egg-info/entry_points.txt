@@ -1,9 +1,0 @@
-[console_scripts]
-create_path = turtlebot4_python_tutorials.create_path:main
-follow_waypoints = turtlebot4_python_tutorials.follow_waypoints:main
-mail_delivery = turtlebot4_python_tutorials.mail_delivery:main
-nav_through_poses = turtlebot4_python_tutorials.nav_through_poses:main
-nav_to_pose = turtlebot4_python_tutorials.nav_to_pose:main
-patrol_loop = turtlebot4_python_tutorials.patrol_loop:main
-turtlebot4_first_python_node = turtlebot4_python_tutorials.turtlebot4_first_python_node:main
-

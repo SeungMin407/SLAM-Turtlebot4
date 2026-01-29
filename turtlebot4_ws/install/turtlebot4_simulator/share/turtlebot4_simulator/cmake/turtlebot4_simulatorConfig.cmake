@@ -1,1 +1,0 @@
-/home/rokey/turtlebot4_ws/build/turtlebot4_simulator/ament_cmake_core/turtlebot4_simulatorConfig.cmake

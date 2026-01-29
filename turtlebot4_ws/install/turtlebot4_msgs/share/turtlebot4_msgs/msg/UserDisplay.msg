@@ -1,1 +1,0 @@
-/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_msgs/msg/UserDisplay.msg
