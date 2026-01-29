@@ -1,0 +1,21 @@
+[0.010s] Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_desktop': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_desktop -- -j20 -l20
+[0.049s] Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_desktop' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_desktop -- -j20 -l20
+[0.050s] Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_desktop': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_desktop
+[0.057s] -- Install configuration: ""
+[0.057s] -- Execute custom install script
+[0.057s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/ament_index/resource_index/package_run_dependencies/turtlebot4_desktop
+[0.058s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/ament_index/resource_index/parent_prefix_path/turtlebot4_desktop
+[0.058s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/environment/ament_prefix_path.sh
+[0.058s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/environment/ament_prefix_path.dsv
+[0.058s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/environment/path.sh
+[0.058s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/environment/path.dsv
+[0.058s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/local_setup.bash
+[0.058s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/local_setup.sh
+[0.058s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/local_setup.zsh
+[0.059s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/local_setup.dsv
+[0.059s] -- Symlinking: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.dsv
+[0.070s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/ament_index/resource_index/packages/turtlebot4_desktop
+[0.070s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/cmake/turtlebot4_desktopConfig.cmake
+[0.070s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/cmake/turtlebot4_desktopConfig-version.cmake
+[0.070s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.xml
+[0.073s] Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_desktop' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_desktop

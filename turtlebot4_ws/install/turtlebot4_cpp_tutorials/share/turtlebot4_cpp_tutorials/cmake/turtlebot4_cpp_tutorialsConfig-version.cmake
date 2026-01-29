@@ -1,0 +1,1 @@
+/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials/ament_cmake_core/turtlebot4_cpp_tutorialsConfig-version.cmake

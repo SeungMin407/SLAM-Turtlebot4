@@ -1,0 +1,9 @@
+/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials/CMakeFiles/uninstall.dir
+/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials/CMakeFiles/turtlebot4_tutorials_uninstall.dir
+/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials/CMakeFiles/test.dir
+/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials/CMakeFiles/edit_cache.dir
+/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials/CMakeFiles/rebuild_cache.dir
+/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials/CMakeFiles/list_install_components.dir
+/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials/CMakeFiles/install.dir
+/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials/CMakeFiles/install/local.dir
+/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials/CMakeFiles/install/strip.dir

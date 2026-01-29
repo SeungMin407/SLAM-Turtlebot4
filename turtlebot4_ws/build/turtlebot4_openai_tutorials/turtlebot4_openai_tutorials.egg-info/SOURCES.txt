@@ -1,0 +1,15 @@
+package.xml
+setup.cfg
+setup.py
+launch/natural_language_nav_launch.py
+prompts/turtlebot4_api.txt
+resource/turtlebot4_openai_tutorials
+turtlebot4_openai_tutorials/__init__.py
+turtlebot4_openai_tutorials/natural_language_nav.py
+turtlebot4_openai_tutorials.egg-info/PKG-INFO
+turtlebot4_openai_tutorials.egg-info/SOURCES.txt
+turtlebot4_openai_tutorials.egg-info/dependency_links.txt
+turtlebot4_openai_tutorials.egg-info/entry_points.txt
+turtlebot4_openai_tutorials.egg-info/requires.txt
+turtlebot4_openai_tutorials.egg-info/top_level.txt
+turtlebot4_openai_tutorials.egg-info/zip-safe

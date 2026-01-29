@@ -1,0 +1,1 @@
+/home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials/launch/natural_language_nav_launch.py

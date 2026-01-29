@@ -1,0 +1,15 @@
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/ament_index/resource_index/package_run_dependencies/turtlebot4_tutorials
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/ament_index/resource_index/parent_prefix_path/turtlebot4_tutorials
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/environment/ament_prefix_path.sh
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/environment/ament_prefix_path.dsv
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/environment/path.sh
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/environment/path.dsv
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/local_setup.bash
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/local_setup.sh
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/local_setup.zsh
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/local_setup.dsv
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.dsv
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/ament_index/resource_index/packages/turtlebot4_tutorials
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/cmake/turtlebot4_tutorialsConfig.cmake
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/cmake/turtlebot4_tutorialsConfig-version.cmake
+/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.xml

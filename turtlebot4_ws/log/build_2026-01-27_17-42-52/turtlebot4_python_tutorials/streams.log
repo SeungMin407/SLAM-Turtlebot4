@@ -1,0 +1,30 @@
+[1.148s] Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation PYTHONPATH=/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/python3.10/site-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/build --no-deps symlink_data
+[1.587s] running develop
+[1.905s] running egg_info
+[1.905s] creating turtlebot4_python_tutorials.egg-info
+[1.905s] writing turtlebot4_python_tutorials.egg-info/PKG-INFO
+[1.905s] writing dependency_links to turtlebot4_python_tutorials.egg-info/dependency_links.txt
+[1.906s] writing entry points to turtlebot4_python_tutorials.egg-info/entry_points.txt
+[1.906s] writing requirements to turtlebot4_python_tutorials.egg-info/requires.txt
+[1.906s] writing top-level names to turtlebot4_python_tutorials.egg-info/top_level.txt
+[1.907s] writing manifest file 'turtlebot4_python_tutorials.egg-info/SOURCES.txt'
+[1.909s] reading manifest file 'turtlebot4_python_tutorials.egg-info/SOURCES.txt'
+[1.910s] writing manifest file 'turtlebot4_python_tutorials.egg-info/SOURCES.txt'
+[1.913s] running build_ext
+[1.913s] Creating /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/python3.10/site-packages/turtlebot4-python-tutorials.egg-link (link to .)
+[1.914s] Installing create_path script to /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/turtlebot4_python_tutorials
+[1.915s] Installing follow_waypoints script to /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/turtlebot4_python_tutorials
+[1.915s] Installing mail_delivery script to /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/turtlebot4_python_tutorials
+[1.915s] Installing nav_through_poses script to /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/turtlebot4_python_tutorials
+[1.915s] Installing nav_to_pose script to /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/turtlebot4_python_tutorials
+[1.915s] Installing patrol_loop script to /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/turtlebot4_python_tutorials
+[1.916s] Installing turtlebot4_first_python_node script to /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/turtlebot4_python_tutorials
+[1.916s] 
+[1.916s] Installed /home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials
+[1.916s] running symlink_data
+[1.917s] creating /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/ament_index
+[1.917s] creating /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/ament_index/resource_index
+[1.917s] creating /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/ament_index/resource_index/packages
+[1.917s] symbolically linking /home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/resource/turtlebot4_python_tutorials -> /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/ament_index/resource_index/packages
+[1.917s] symbolically linking /home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/package.xml -> /home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials
+[1.962s] Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation PYTHONPATH=/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/python3.10/site-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/build --no-deps symlink_data

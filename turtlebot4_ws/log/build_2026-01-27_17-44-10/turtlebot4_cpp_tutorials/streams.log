@@ -1,0 +1,24 @@
+[0.020s] Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials -- -j20 -l20
+[0.059s] [35m[1mConsolidate compiler generated dependencies of target turtlebot4_first_cpp_node[0m
+[0.079s] [100%] Built target turtlebot4_first_cpp_node
+[0.142s] Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials -- -j20 -l20
+[0.143s] Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials
+[0.154s] -- Install configuration: ""
+[0.155s] -- Execute custom install script
+[0.155s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/lib/turtlebot4_cpp_tutorials/turtlebot4_first_cpp_node
+[0.155s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/ament_index/resource_index/package_run_dependencies/turtlebot4_cpp_tutorials
+[0.156s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/ament_index/resource_index/parent_prefix_path/turtlebot4_cpp_tutorials
+[0.156s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/environment/ament_prefix_path.sh
+[0.156s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/environment/ament_prefix_path.dsv
+[0.156s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/environment/path.sh
+[0.156s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/environment/path.dsv
+[0.156s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/local_setup.bash
+[0.156s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/local_setup.sh
+[0.156s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/local_setup.zsh
+[0.156s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/local_setup.dsv
+[0.156s] -- Symlinking: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.dsv
+[0.162s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/ament_index/resource_index/packages/turtlebot4_cpp_tutorials
+[0.163s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/cmake/turtlebot4_cpp_tutorialsConfig.cmake
+[0.163s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/cmake/turtlebot4_cpp_tutorialsConfig-version.cmake
+[0.164s] -- Up-to-date symlink: /home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.xml
+[0.172s] Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials

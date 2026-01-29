@@ -1,0 +1,1143 @@
+[0.056s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.056s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7d002593b430>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7d002593ad70>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7d002593ad70>>, mixin_verb=('build',))
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.144s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/rokey/turtlebot4_ws'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'ignore_ament_install'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['colcon_pkg']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'colcon_pkg'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['colcon_meta']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'colcon_meta'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['ros']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'ros'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['cmake', 'python']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'cmake'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'python'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extensions ['python_setup_py']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2) by extension 'python_setup_py'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extensions ['ignore', 'ignore_ament_install']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extension 'ignore'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extension 'ignore_ament_install'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extensions ['colcon_pkg']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extension 'colcon_pkg'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extensions ['colcon_meta']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extension 'colcon_meta'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extensions ['ros']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/explore) by extension 'ros'
+[0.154s] DEBUG:colcon.colcon_core.package_identification:Package 'src/m-explore-ros2/explore' with type 'ros.ament_cmake' and name 'explore_lite'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extension 'ignore_ament_install'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extensions ['colcon_pkg']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extension 'colcon_pkg'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extensions ['colcon_meta']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extension 'colcon_meta'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extensions ['ros']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/m-explore-ros2/map_merge) by extension 'ros'
+[0.155s] DEBUG:colcon.colcon_core.package_identification:Package 'src/m-explore-ros2/map_merge' with type 'ros.ament_cmake' and name 'multirobot_map_merge'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extension 'ros'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extensions ['cmake', 'python']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extension 'cmake'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extension 'python'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extensions ['python_setup_py']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4) by extension 'python_setup_py'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_description) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_description) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_description) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_description) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_description) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_description) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_description) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_description) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_description) by extension 'ros'
+[0.160s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4/turtlebot4_description' with type 'ros.ament_cmake' and name 'turtlebot4_description'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_msgs) by extension 'ignore'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_msgs) by extension 'ignore_ament_install'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_msgs) by extensions ['colcon_pkg']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_msgs) by extension 'colcon_pkg'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_msgs) by extensions ['colcon_meta']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_msgs) by extension 'colcon_meta'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_msgs) by extensions ['ros']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_msgs) by extension 'ros'
+[0.161s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4/turtlebot4_msgs' with type 'ros.ament_cmake' and name 'turtlebot4_msgs'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_navigation) by extensions ['ignore', 'ignore_ament_install']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_navigation) by extension 'ignore'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_navigation) by extension 'ignore_ament_install'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_navigation) by extensions ['colcon_pkg']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_navigation) by extension 'colcon_pkg'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_navigation) by extensions ['colcon_meta']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_navigation) by extension 'colcon_meta'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_navigation) by extensions ['ros']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_navigation) by extension 'ros'
+[0.161s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4/turtlebot4_navigation' with type 'ros.ament_cmake' and name 'turtlebot4_navigation'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_node) by extensions ['ignore', 'ignore_ament_install']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_node) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_node) by extension 'ignore_ament_install'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_node) by extensions ['colcon_pkg']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_node) by extension 'colcon_pkg'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_node) by extensions ['colcon_meta']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_node) by extension 'colcon_meta'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_node) by extensions ['ros']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4/turtlebot4_node) by extension 'ros'
+[0.162s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4/turtlebot4_node' with type 'ros.ament_cmake' and name 'turtlebot4_node'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extensions ['ignore', 'ignore_ament_install']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extension 'ignore_ament_install'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extensions ['colcon_pkg']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extension 'colcon_pkg'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extensions ['colcon_meta']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extension 'colcon_meta'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extensions ['ros']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extension 'ros'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extensions ['cmake', 'python']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extension 'cmake'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extension 'python'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extensions ['python_setup_py']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop) by extension 'python_setup_py'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_desktop) by extensions ['ignore', 'ignore_ament_install']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_desktop) by extension 'ignore'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_desktop) by extension 'ignore_ament_install'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_desktop) by extensions ['colcon_pkg']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_desktop) by extension 'colcon_pkg'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_desktop) by extensions ['colcon_meta']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_desktop) by extension 'colcon_meta'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_desktop) by extensions ['ros']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_desktop) by extension 'ros'
+[0.163s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_desktop/turtlebot4_desktop' with type 'ros.ament_cmake' and name 'turtlebot4_desktop'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_viz) by extensions ['ignore', 'ignore_ament_install']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_viz) by extension 'ignore'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_viz) by extension 'ignore_ament_install'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_viz) by extensions ['colcon_pkg']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_viz) by extension 'colcon_pkg'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_viz) by extensions ['colcon_meta']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_viz) by extension 'colcon_meta'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_viz) by extensions ['ros']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_desktop/turtlebot4_viz) by extension 'ros'
+[0.164s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_desktop/turtlebot4_viz' with type 'ros.ament_cmake' and name 'turtlebot4_viz'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extensions ['ignore', 'ignore_ament_install']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'ignore'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'ignore_ament_install'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extensions ['colcon_pkg']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'colcon_pkg'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extensions ['colcon_meta']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'colcon_meta'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extensions ['ros']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'ros'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extensions ['cmake', 'python']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'cmake'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'python'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extensions ['python_setup_py']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'python_setup_py'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_bringup) by extension 'ignore'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_bringup) by extension 'ignore_ament_install'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_bringup) by extensions ['colcon_pkg']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_bringup) by extension 'colcon_pkg'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_bringup) by extensions ['colcon_meta']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_bringup) by extension 'colcon_meta'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_bringup) by extensions ['ros']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_bringup) by extension 'ros'
+[0.165s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_simulator/turtlebot4_ignition_bringup' with type 'ros.ament_cmake' and name 'turtlebot4_ignition_bringup'
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins) by extensions ['ignore', 'ignore_ament_install']
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins) by extension 'ignore'
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins) by extension 'ignore_ament_install'
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins) by extensions ['colcon_pkg']
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins) by extension 'colcon_pkg'
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins) by extensions ['colcon_meta']
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins) by extension 'colcon_meta'
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins) by extensions ['ros']
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins) by extension 'ros'
+[0.166s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins' with type 'ros.ament_cmake' and name 'turtlebot4_ignition_gui_plugins'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_toolbox) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_toolbox) by extension 'ignore'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_toolbox) by extension 'ignore_ament_install'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_toolbox) by extensions ['colcon_pkg']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_toolbox) by extension 'colcon_pkg'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_toolbox) by extensions ['colcon_meta']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_toolbox) by extension 'colcon_meta'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_toolbox) by extensions ['ros']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_ignition_toolbox) by extension 'ros'
+[0.166s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_simulator/turtlebot4_ignition_toolbox' with type 'ros.ament_cmake' and name 'turtlebot4_ignition_toolbox'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_simulator) by extensions ['ignore', 'ignore_ament_install']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_simulator) by extension 'ignore'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_simulator) by extension 'ignore_ament_install'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_simulator) by extensions ['colcon_pkg']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_simulator) by extension 'colcon_pkg'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_simulator) by extensions ['colcon_meta']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_simulator) by extension 'colcon_meta'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_simulator) by extensions ['ros']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator/turtlebot4_simulator) by extension 'ros'
+[0.167s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_simulator/turtlebot4_simulator' with type 'ros.ament_cmake' and name 'turtlebot4_simulator'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extensions ['ignore', 'ignore_ament_install']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extension 'ignore'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extension 'ignore_ament_install'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extensions ['colcon_pkg']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extension 'colcon_pkg'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extensions ['colcon_meta']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extension 'colcon_meta'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extensions ['ros']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extension 'ros'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extensions ['cmake', 'python']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extension 'cmake'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extension 'python'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extensions ['python_setup_py']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials) by extension 'python_setup_py'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_cpp_tutorials) by extensions ['ignore', 'ignore_ament_install']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_cpp_tutorials) by extension 'ignore'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_cpp_tutorials) by extension 'ignore_ament_install'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_cpp_tutorials) by extensions ['colcon_pkg']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_cpp_tutorials) by extension 'colcon_pkg'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_cpp_tutorials) by extensions ['colcon_meta']
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_cpp_tutorials) by extension 'colcon_meta'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_cpp_tutorials) by extensions ['ros']
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_cpp_tutorials) by extension 'ros'
+[0.168s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_tutorials/turtlebot4_cpp_tutorials' with type 'ros.ament_cmake' and name 'turtlebot4_cpp_tutorials'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_openai_tutorials) by extensions ['ignore', 'ignore_ament_install']
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_openai_tutorials) by extension 'ignore'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_openai_tutorials) by extension 'ignore_ament_install'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_openai_tutorials) by extensions ['colcon_pkg']
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_openai_tutorials) by extension 'colcon_pkg'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_openai_tutorials) by extensions ['colcon_meta']
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_openai_tutorials) by extension 'colcon_meta'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_openai_tutorials) by extensions ['ros']
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_openai_tutorials) by extension 'ros'
+[0.169s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_tutorials/turtlebot4_openai_tutorials' with type 'ros.ament_python' and name 'turtlebot4_openai_tutorials'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_python_tutorials) by extensions ['ignore', 'ignore_ament_install']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_python_tutorials) by extension 'ignore'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_python_tutorials) by extension 'ignore_ament_install'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_python_tutorials) by extensions ['colcon_pkg']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_python_tutorials) by extension 'colcon_pkg'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_python_tutorials) by extensions ['colcon_meta']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_python_tutorials) by extension 'colcon_meta'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_python_tutorials) by extensions ['ros']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_python_tutorials) by extension 'ros'
+[0.169s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_tutorials/turtlebot4_python_tutorials' with type 'ros.ament_python' and name 'turtlebot4_python_tutorials'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_tutorials) by extensions ['ignore', 'ignore_ament_install']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_tutorials) by extension 'ignore'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_tutorials) by extension 'ignore_ament_install'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_tutorials) by extensions ['colcon_pkg']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_tutorials) by extension 'colcon_pkg'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_tutorials) by extensions ['colcon_meta']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_tutorials) by extension 'colcon_meta'
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_tutorials) by extensions ['ros']
+[0.169s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_tutorials/turtlebot4_tutorials) by extension 'ros'
+[0.170s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_tutorials/turtlebot4_tutorials' with type 'ros.ament_cmake' and name 'turtlebot4_tutorials'
+[0.170s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.170s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.170s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.170s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.170s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.183s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.183s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.184s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 16 installed packages in /home/rokey/turtlebot4_ws/install
+[0.185s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 388 installed packages in /opt/ros/humble
+[0.186s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_target' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_clean_cache' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_clean_first' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'cmake_force_configure' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'ament_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'catkin_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'explore_lite' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.210s] DEBUG:colcon.colcon_core.verb:Building package 'explore_lite' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/explore_lite', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/explore_lite', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/m-explore-ros2/explore', 'symlink_install': True, 'test_result_base': None}
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_target' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'multirobot_map_merge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] DEBUG:colcon.colcon_core.verb:Building package 'multirobot_map_merge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/multirobot_map_merge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/multirobot_map_merge', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/m-explore-ros2/map_merge', 'symlink_install': True, 'test_result_base': None}
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_cpp_tutorials' build argument 'cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_cpp_tutorials' build argument 'cmake_target' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_cpp_tutorials' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_cpp_tutorials' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_cpp_tutorials' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_cpp_tutorials' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_cpp_tutorials' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_cpp_tutorials' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_cpp_tutorials' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_cpp_tutorials' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_cpp_tutorials', 'symlink_install': True, 'test_result_base': None}
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_description' build argument 'cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_description' build argument 'cmake_target' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_description', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_description', 'symlink_install': True, 'test_result_base': None}
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_target' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_ignition_gui_plugins' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_gui_plugins', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins', 'symlink_install': True, 'test_result_base': None}
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_msgs' build argument 'cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_msgs' build argument 'cmake_target' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_msgs', 'symlink_install': True, 'test_result_base': None}
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_navigation' build argument 'cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_navigation' build argument 'cmake_target' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_navigation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_navigation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_navigation' build argument 'cmake_clean_first' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_navigation' build argument 'cmake_force_configure' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_navigation' build argument 'ament_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_navigation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_navigation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_navigation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_navigation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_navigation', 'symlink_install': True, 'test_result_base': None}
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_target' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_clean_cache' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_clean_first' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_force_configure' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'ament_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_ignition_toolbox' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_toolbox', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_ignition_toolbox', 'symlink_install': True, 'test_result_base': None}
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_node' build argument 'cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_node' build argument 'cmake_target' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_node' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_node' build argument 'cmake_clean_cache' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_node' build argument 'cmake_clean_first' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_node' build argument 'cmake_force_configure' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_node' build argument 'ament_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_node' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_node' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_node' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_node', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_node', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_node', 'symlink_install': True, 'test_result_base': None}
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_openai_tutorials' build argument 'cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_openai_tutorials' build argument 'cmake_target' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_openai_tutorials' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_openai_tutorials' build argument 'cmake_clean_cache' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_openai_tutorials' build argument 'cmake_clean_first' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_openai_tutorials' build argument 'cmake_force_configure' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_openai_tutorials' build argument 'ament_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_openai_tutorials' build argument 'catkin_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_openai_tutorials' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.213s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_openai_tutorials' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_openai_tutorials', 'symlink_install': True, 'test_result_base': None}
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_python_tutorials' build argument 'cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_python_tutorials' build argument 'cmake_target' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_python_tutorials' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_python_tutorials' build argument 'cmake_clean_cache' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_python_tutorials' build argument 'cmake_clean_first' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_python_tutorials' build argument 'cmake_force_configure' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_python_tutorials' build argument 'ament_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_python_tutorials' build argument 'catkin_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_python_tutorials' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.213s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_python_tutorials' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_python_tutorials', 'symlink_install': True, 'test_result_base': None}
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_viz' build argument 'cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_viz' build argument 'cmake_target' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_viz' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_viz' build argument 'cmake_clean_cache' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_viz' build argument 'cmake_clean_first' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_viz' build argument 'cmake_force_configure' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_viz' build argument 'ament_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_viz' build argument 'catkin_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_viz' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.213s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_viz' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_viz', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_viz', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4_desktop/turtlebot4_viz', 'symlink_install': True, 'test_result_base': None}
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_desktop' build argument 'cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_desktop' build argument 'cmake_target' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_desktop' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_desktop' build argument 'cmake_clean_cache' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_desktop' build argument 'cmake_clean_first' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_desktop' build argument 'cmake_force_configure' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_desktop' build argument 'ament_cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_desktop' build argument 'catkin_cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_desktop' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.214s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_desktop' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_desktop', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4_desktop/turtlebot4_desktop', 'symlink_install': True, 'test_result_base': None}
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_target' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.214s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_ignition_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_ignition_bringup', 'symlink_install': True, 'test_result_base': None}
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_tutorials' build argument 'cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_tutorials' build argument 'cmake_target' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_tutorials' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_tutorials' build argument 'cmake_clean_cache' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_tutorials' build argument 'cmake_clean_first' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_tutorials' build argument 'cmake_force_configure' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_tutorials' build argument 'ament_cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_tutorials' build argument 'catkin_cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_tutorials' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.214s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_tutorials' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_tutorials', 'symlink_install': True, 'test_result_base': None}
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_target' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_clean_cache' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_clean_first' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_force_configure' from command line to 'False'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'ament_cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'catkin_cmake_args' from command line to 'None'
+[0.214s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.214s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_simulator' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rokey/turtlebot4_ws/build/turtlebot4_simulator', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator', 'merge_install': False, 'path': '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_simulator', 'symlink_install': True, 'test_result_base': None}
+[0.214s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.215s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.216s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_navigation' with build type 'ament_cmake'
+[0.216s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_navigation'
+[0.217s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.217s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.217s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.219s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_description' with build type 'ament_cmake'
+[0.219s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_description'
+[0.220s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.220s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.222s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_msgs' with build type 'ament_cmake'
+[0.222s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_msgs'
+[0.222s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.222s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.224s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins' with build type 'ament_cmake'
+[0.224s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_ignition_gui_plugins'
+[0.224s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.224s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.226s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_cpp_tutorials' with build type 'ament_cmake'
+[0.226s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_cpp_tutorials'
+[0.227s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.227s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.229s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/m-explore-ros2/explore' with build type 'ament_cmake'
+[0.230s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/m-explore-ros2/explore'
+[0.230s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.230s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.232s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/m-explore-ros2/map_merge' with build type 'ament_cmake'
+[0.232s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/m-explore-ros2/map_merge'
+[0.232s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.233s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.238s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_navigation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_navigation -- -j20 -l20
+[0.240s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_description -- -j20 -l20
+[0.242s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_msgs -- -j20 -l20
+[0.244s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_gui_plugins': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_gui_plugins -- -j20 -l20
+[0.247s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials -- -j20 -l20
+[0.250s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/explore_lite': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/explore_lite -- -j20 -l20
+[0.256s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/multirobot_map_merge': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/multirobot_map_merge -- -j20 -l20
+[0.276s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_description -- -j20 -l20
+[0.288s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_description
+[0.326s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_description)
+[0.328s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_description
+[0.334s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description' for CMake module files
+[0.335s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description' for CMake config files
+[0.336s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_description', 'cmake_prefix_path')
+[0.337s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/hook/cmake_prefix_path.ps1'
+[0.339s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/hook/cmake_prefix_path.dsv'
+[0.340s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/hook/cmake_prefix_path.sh'
+[0.341s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description/bin'
+[0.341s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description/lib/pkgconfig/turtlebot4_description.pc'
+[0.342s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description/lib/python3.10/site-packages'
+[0.342s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description/bin'
+[0.343s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/package.ps1'
+[0.345s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/package.dsv'
+[0.346s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/package.sh'
+[0.347s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/package.bash'
+[0.350s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/package.zsh'
+[0.351s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/colcon-core/packages/turtlebot4_description)
+[0.352s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_description)
+[0.353s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description' for CMake module files
+[0.354s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description' for CMake config files
+[0.355s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_description', 'cmake_prefix_path')
+[0.355s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/hook/cmake_prefix_path.ps1'
+[0.356s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/hook/cmake_prefix_path.dsv'
+[0.357s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/hook/cmake_prefix_path.sh'
+[0.358s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description/bin'
+[0.358s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description/lib/pkgconfig/turtlebot4_description.pc'
+[0.358s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description/lib/python3.10/site-packages'
+[0.359s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_description/bin'
+[0.360s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/package.ps1'
+[0.361s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/package.dsv'
+[0.362s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/package.sh'
+[0.363s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/package.bash'
+[0.364s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/turtlebot4_description/package.zsh'
+[0.365s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_description/share/colcon-core/packages/turtlebot4_description)
+[0.368s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4_desktop/turtlebot4_viz' with build type 'ament_cmake'
+[0.368s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4_desktop/turtlebot4_viz'
+[0.369s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.369s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials -- -j20 -l20
+[0.369s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.370s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials
+[0.383s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_gui_plugins' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_gui_plugins -- -j20 -l20
+[0.385s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_gui_plugins': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_gui_plugins
+[0.386s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/explore_lite' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/explore_lite -- -j20 -l20
+[0.388s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/explore_lite': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/explore_lite
+[0.395s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_cpp_tutorials)
+[0.396s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials' for CMake module files
+[0.397s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials' for CMake config files
+[0.397s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_cpp_tutorials', 'cmake_prefix_path')
+[0.397s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/hook/cmake_prefix_path.ps1'
+[0.398s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_viz': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_viz -- -j20 -l20
+[0.399s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_cpp_tutorials
+[0.400s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/hook/cmake_prefix_path.dsv'
+[0.403s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/hook/cmake_prefix_path.sh'
+[0.405s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/lib'
+[0.407s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/bin'
+[0.407s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/lib/pkgconfig/turtlebot4_cpp_tutorials.pc'
+[0.407s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/lib/python3.10/site-packages'
+[0.408s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/bin'
+[0.409s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.ps1'
+[0.410s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.dsv'
+[0.410s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.sh'
+[0.411s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.bash'
+[0.411s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.zsh'
+[0.412s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/colcon-core/packages/turtlebot4_cpp_tutorials)
+[0.413s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_cpp_tutorials)
+[0.413s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials' for CMake module files
+[0.414s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials' for CMake config files
+[0.414s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_cpp_tutorials', 'cmake_prefix_path')
+[0.414s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/hook/cmake_prefix_path.ps1'
+[0.415s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/hook/cmake_prefix_path.dsv'
+[0.415s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/hook/cmake_prefix_path.sh'
+[0.416s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/lib'
+[0.416s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/bin'
+[0.416s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/lib/pkgconfig/turtlebot4_cpp_tutorials.pc'
+[0.416s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/lib/python3.10/site-packages'
+[0.417s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/bin'
+[0.417s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.ps1'
+[0.417s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.dsv'
+[0.418s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.sh'
+[0.418s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.bash'
+[0.419s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/turtlebot4_cpp_tutorials/package.zsh'
+[0.419s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials/share/colcon-core/packages/turtlebot4_cpp_tutorials)
+[0.422s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/multirobot_map_merge' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/multirobot_map_merge -- -j20 -l20
+[0.425s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/multirobot_map_merge': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/multirobot_map_merge
+[0.427s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_gui_plugins)
+[0.427s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins' for CMake module files
+[0.428s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_gui_plugins' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_gui_plugins
+[0.428s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins' for CMake config files
+[0.429s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_gui_plugins', 'cmake_prefix_path')
+[0.429s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.ps1'
+[0.430s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.dsv'
+[0.430s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.sh'
+[0.431s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/bin'
+[0.431s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/lib/pkgconfig/turtlebot4_ignition_gui_plugins.pc'
+[0.432s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/lib/python3.10/site-packages'
+[0.432s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/bin'
+[0.432s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.ps1'
+[0.433s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.dsv'
+[0.436s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.sh'
+[0.437s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.bash'
+[0.439s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.zsh'
+[0.440s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/colcon-core/packages/turtlebot4_ignition_gui_plugins)
+[0.441s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_gui_plugins)
+[0.442s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins' for CMake module files
+[0.443s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins' for CMake config files
+[0.443s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_gui_plugins', 'cmake_prefix_path')
+[0.443s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.ps1'
+[0.444s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.dsv'
+[0.444s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.sh'
+[0.445s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/bin'
+[0.445s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/lib/pkgconfig/turtlebot4_ignition_gui_plugins.pc'
+[0.445s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/lib/python3.10/site-packages'
+[0.446s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/bin'
+[0.446s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.ps1'
+[0.447s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.dsv'
+[0.447s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.sh'
+[0.448s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.bash'
+[0.449s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.zsh'
+[0.451s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins/share/colcon-core/packages/turtlebot4_ignition_gui_plugins)
+[0.451s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(explore_lite)
+[0.451s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite' for CMake module files
+[0.453s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/explore_lite' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/explore_lite
+[0.453s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite' for CMake config files
+[0.453s] Level 1:colcon.colcon_core.shell:create_environment_hook('explore_lite', 'cmake_prefix_path')
+[0.453s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.ps1'
+[0.454s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.dsv'
+[0.454s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.sh'
+[0.455s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite/lib'
+[0.455s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite/bin'
+[0.455s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite/lib/pkgconfig/explore_lite.pc'
+[0.455s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite/lib/python3.10/site-packages'
+[0.456s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite/bin'
+[0.456s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/package.ps1'
+[0.457s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/package.dsv'
+[0.457s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/package.sh'
+[0.458s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/package.bash'
+[0.458s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/package.zsh'
+[0.458s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/explore_lite/share/colcon-core/packages/explore_lite)
+[0.459s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(explore_lite)
+[0.459s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite' for CMake module files
+[0.459s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite' for CMake config files
+[0.460s] Level 1:colcon.colcon_core.shell:create_environment_hook('explore_lite', 'cmake_prefix_path')
+[0.460s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.ps1'
+[0.461s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.dsv'
+[0.461s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/hook/cmake_prefix_path.sh'
+[0.461s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite/lib'
+[0.462s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite/bin'
+[0.462s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite/lib/pkgconfig/explore_lite.pc'
+[0.462s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite/lib/python3.10/site-packages'
+[0.462s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/explore_lite/bin'
+[0.462s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/package.ps1'
+[0.463s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/package.dsv'
+[0.464s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/package.sh'
+[0.464s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/package.bash'
+[0.464s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/explore_lite/share/explore_lite/package.zsh'
+[0.465s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/explore_lite/share/colcon-core/packages/explore_lite)
+[0.467s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_viz' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_viz -- -j20 -l20
+[0.468s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_viz': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_viz
+[0.469s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(multirobot_map_merge)
+[0.470s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge' for CMake module files
+[0.471s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/multirobot_map_merge' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/multirobot_map_merge
+[0.471s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge' for CMake config files
+[0.472s] Level 1:colcon.colcon_core.shell:create_environment_hook('multirobot_map_merge', 'cmake_prefix_path')
+[0.472s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.ps1'
+[0.473s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.dsv'
+[0.473s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.sh'
+[0.474s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/lib'
+[0.474s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/bin'
+[0.474s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/lib/pkgconfig/multirobot_map_merge.pc'
+[0.474s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/lib/python3.10/site-packages'
+[0.474s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/bin'
+[0.475s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/package.ps1'
+[0.475s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/package.dsv'
+[0.476s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/package.sh'
+[0.476s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/package.bash'
+[0.476s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/package.zsh'
+[0.477s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/colcon-core/packages/multirobot_map_merge)
+[0.477s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(multirobot_map_merge)
+[0.477s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge' for CMake module files
+[0.478s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge' for CMake config files
+[0.478s] Level 1:colcon.colcon_core.shell:create_environment_hook('multirobot_map_merge', 'cmake_prefix_path')
+[0.478s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.ps1'
+[0.479s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.dsv'
+[0.479s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/hook/cmake_prefix_path.sh'
+[0.480s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/lib'
+[0.481s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/bin'
+[0.481s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/lib/pkgconfig/multirobot_map_merge.pc'
+[0.481s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/lib/python3.10/site-packages'
+[0.481s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/bin'
+[0.482s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/package.ps1'
+[0.483s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/package.dsv'
+[0.484s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/package.sh'
+[0.485s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/package.bash'
+[0.485s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/multirobot_map_merge/package.zsh'
+[0.485s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/multirobot_map_merge/share/colcon-core/packages/multirobot_map_merge)
+[0.498s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_viz)
+[0.498s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz' for CMake module files
+[0.499s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_viz' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_viz
+[0.499s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz' for CMake config files
+[0.499s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_viz', 'cmake_prefix_path')
+[0.499s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/hook/cmake_prefix_path.ps1'
+[0.500s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/hook/cmake_prefix_path.dsv'
+[0.500s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/hook/cmake_prefix_path.sh'
+[0.500s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/bin'
+[0.500s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/lib/pkgconfig/turtlebot4_viz.pc'
+[0.501s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/lib/python3.10/site-packages'
+[0.501s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/bin'
+[0.501s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/package.ps1'
+[0.501s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/package.dsv'
+[0.502s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/package.sh'
+[0.502s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/package.bash'
+[0.503s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/package.zsh'
+[0.503s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/colcon-core/packages/turtlebot4_viz)
+[0.503s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_viz)
+[0.504s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz' for CMake module files
+[0.504s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz' for CMake config files
+[0.504s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_viz', 'cmake_prefix_path')
+[0.504s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/hook/cmake_prefix_path.ps1'
+[0.505s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/hook/cmake_prefix_path.dsv'
+[0.505s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/hook/cmake_prefix_path.sh'
+[0.505s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/bin'
+[0.505s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/lib/pkgconfig/turtlebot4_viz.pc'
+[0.506s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/lib/python3.10/site-packages'
+[0.506s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/bin'
+[0.506s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/package.ps1'
+[0.507s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/package.dsv'
+[0.507s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/package.sh'
+[0.507s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/package.bash'
+[0.508s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/turtlebot4_viz/package.zsh'
+[0.508s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_viz/share/colcon-core/packages/turtlebot4_viz)
+[0.508s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4_desktop/turtlebot4_desktop' with build type 'ament_cmake'
+[0.508s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4_desktop/turtlebot4_desktop'
+[0.508s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.509s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.520s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_desktop': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_desktop -- -j20 -l20
+[0.559s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_desktop' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_desktop -- -j20 -l20
+[0.560s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_desktop': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_desktop
+[0.581s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_desktop)
+[0.582s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop' for CMake module files
+[0.583s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_desktop' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_desktop
+[0.583s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop' for CMake config files
+[0.584s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_desktop', 'cmake_prefix_path')
+[0.584s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/hook/cmake_prefix_path.ps1'
+[0.585s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/hook/cmake_prefix_path.dsv'
+[0.585s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/hook/cmake_prefix_path.sh'
+[0.586s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/bin'
+[0.586s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/lib/pkgconfig/turtlebot4_desktop.pc'
+[0.587s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/lib/python3.10/site-packages'
+[0.587s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/bin'
+[0.588s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.ps1'
+[0.589s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.dsv'
+[0.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.sh'
+[0.591s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.bash'
+[0.591s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.zsh'
+[0.592s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/colcon-core/packages/turtlebot4_desktop)
+[0.593s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_desktop)
+[0.593s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop' for CMake module files
+[0.594s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop' for CMake config files
+[0.594s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_desktop', 'cmake_prefix_path')
+[0.594s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/hook/cmake_prefix_path.ps1'
+[0.595s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/hook/cmake_prefix_path.dsv'
+[0.596s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/hook/cmake_prefix_path.sh'
+[0.597s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/bin'
+[0.597s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/lib/pkgconfig/turtlebot4_desktop.pc'
+[0.598s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/lib/python3.10/site-packages'
+[0.598s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/bin'
+[0.599s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.ps1'
+[0.600s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.dsv'
+[0.600s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.sh'
+[0.601s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.bash'
+[0.602s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/turtlebot4_desktop/package.zsh'
+[0.602s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_desktop/share/colcon-core/packages/turtlebot4_desktop)
+[0.618s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_navigation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_navigation -- -j20 -l20
+[0.619s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_navigation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_navigation
+[0.626s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_msgs -- -j20 -l20
+[0.628s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_msgs
+[0.695s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_msgs)
+[0.695s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_msgs
+[0.695s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs' for CMake module files
+[0.696s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs' for CMake config files
+[0.698s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_msgs', 'cmake_prefix_path')
+[0.698s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/cmake_prefix_path.ps1'
+[0.699s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/cmake_prefix_path.dsv'
+[0.699s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/cmake_prefix_path.sh'
+[0.700s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib'
+[0.700s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_msgs', 'ld_library_path_lib')
+[0.700s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/ld_library_path_lib.ps1'
+[0.700s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/ld_library_path_lib.dsv'
+[0.701s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/ld_library_path_lib.sh'
+[0.701s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/bin'
+[0.701s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib/pkgconfig/turtlebot4_msgs.pc'
+[0.701s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib/python3.10/site-packages'
+[0.701s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/bin'
+[0.701s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/package.ps1'
+[0.702s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/package.dsv'
+[0.702s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/package.sh'
+[0.702s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/package.bash'
+[0.703s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/package.zsh'
+[0.703s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/colcon-core/packages/turtlebot4_msgs)
+[0.703s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_msgs)
+[0.704s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs' for CMake module files
+[0.704s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs' for CMake config files
+[0.705s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_msgs', 'cmake_prefix_path')
+[0.705s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/cmake_prefix_path.ps1'
+[0.705s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/cmake_prefix_path.dsv'
+[0.705s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/cmake_prefix_path.sh'
+[0.706s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib'
+[0.706s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_msgs', 'ld_library_path_lib')
+[0.706s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/ld_library_path_lib.ps1'
+[0.707s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/ld_library_path_lib.dsv'
+[0.707s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/hook/ld_library_path_lib.sh'
+[0.707s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/bin'
+[0.707s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib/pkgconfig/turtlebot4_msgs.pc'
+[0.707s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib/python3.10/site-packages'
+[0.708s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/bin'
+[0.708s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/package.ps1'
+[0.708s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/package.dsv'
+[0.709s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/package.sh'
+[0.709s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/package.bash'
+[0.709s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/turtlebot4_msgs/package.zsh'
+[0.710s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/share/colcon-core/packages/turtlebot4_msgs)
+[0.710s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_ignition_toolbox' with build type 'ament_cmake'
+[0.710s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_ignition_toolbox'
+[0.711s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.711s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.715s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_node' with build type 'ament_cmake'
+[0.715s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4/turtlebot4_node'
+[0.715s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.715s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.721s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_navigation)
+[0.722s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation' for CMake module files
+[0.722s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_toolbox': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_toolbox -- -j20 -l20
+[0.723s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_navigation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_navigation
+[0.723s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation' for CMake config files
+[0.724s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_navigation', 'cmake_prefix_path')
+[0.724s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/hook/cmake_prefix_path.ps1'
+[0.724s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/hook/cmake_prefix_path.dsv'
+[0.725s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/hook/cmake_prefix_path.sh'
+[0.725s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/bin'
+[0.725s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/lib/pkgconfig/turtlebot4_navigation.pc'
+[0.725s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/lib/python3.10/site-packages'
+[0.726s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/bin'
+[0.726s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/package.ps1'
+[0.726s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/package.dsv'
+[0.727s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/package.sh'
+[0.727s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/package.bash'
+[0.728s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/package.zsh'
+[0.728s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/colcon-core/packages/turtlebot4_navigation)
+[0.729s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_navigation)
+[0.729s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation' for CMake module files
+[0.729s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation' for CMake config files
+[0.730s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_navigation', 'cmake_prefix_path')
+[0.730s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/hook/cmake_prefix_path.ps1'
+[0.730s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/hook/cmake_prefix_path.dsv'
+[0.731s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/hook/cmake_prefix_path.sh'
+[0.731s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/bin'
+[0.731s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/lib/pkgconfig/turtlebot4_navigation.pc'
+[0.732s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/lib/python3.10/site-packages'
+[0.732s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/bin'
+[0.732s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/package.ps1'
+[0.733s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/package.dsv'
+[0.733s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/package.sh'
+[0.733s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/package.bash'
+[0.734s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/turtlebot4_navigation/package.zsh'
+[0.734s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/share/colcon-core/packages/turtlebot4_navigation)
+[0.735s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_python_tutorials' with build type 'ament_python'
+[0.735s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_python_tutorials', 'ament_prefix_path')
+[0.735s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/hook/ament_prefix_path.ps1'
+[0.736s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/hook/ament_prefix_path.dsv'
+[0.736s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/hook/ament_prefix_path.sh'
+[0.737s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.737s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.740s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_openai_tutorials' with build type 'ament_python'
+[0.740s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_openai_tutorials', 'ament_prefix_path')
+[0.741s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/hook/ament_prefix_path.ps1'
+[0.741s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/hook/ament_prefix_path.dsv'
+[0.741s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/hook/ament_prefix_path.sh'
+[0.742s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.742s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.750s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_node': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_node -- -j20 -l20
+[0.951s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_python_tutorials'
+[0.951s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.951s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.122s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_openai_tutorials'
+[1.122s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.122s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.127s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_toolbox' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_toolbox -- -j20 -l20
+[1.128s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_toolbox': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_toolbox
+[1.128s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_node' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_node -- -j20 -l20
+[1.130s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_node': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_node
+[1.146s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_toolbox)
+[1.147s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox' for CMake module files
+[1.148s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_toolbox' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_toolbox
+[1.149s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox' for CMake config files
+[1.150s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_toolbox', 'cmake_prefix_path')
+[1.150s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.ps1'
+[1.151s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.dsv'
+[1.151s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.sh'
+[1.151s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/lib'
+[1.151s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/bin'
+[1.152s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/lib/pkgconfig/turtlebot4_ignition_toolbox.pc'
+[1.152s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/lib/python3.10/site-packages'
+[1.152s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/bin'
+[1.152s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.ps1'
+[1.153s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.dsv'
+[1.153s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.sh'
+[1.153s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.bash'
+[1.153s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.zsh'
+[1.154s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/colcon-core/packages/turtlebot4_ignition_toolbox)
+[1.154s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_toolbox)
+[1.154s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox' for CMake module files
+[1.154s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox' for CMake config files
+[1.155s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_toolbox', 'cmake_prefix_path')
+[1.155s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.ps1'
+[1.155s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.dsv'
+[1.155s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.sh'
+[1.156s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/lib'
+[1.156s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/bin'
+[1.156s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/lib/pkgconfig/turtlebot4_ignition_toolbox.pc'
+[1.156s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/lib/python3.10/site-packages'
+[1.156s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/bin'
+[1.156s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.ps1'
+[1.157s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.dsv'
+[1.157s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.sh'
+[1.157s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.bash'
+[1.158s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.zsh'
+[1.158s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox/share/colcon-core/packages/turtlebot4_ignition_toolbox)
+[1.159s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_node)
+[1.159s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_node' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_node
+[1.160s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node' for CMake module files
+[1.161s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node' for CMake config files
+[1.161s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_node', 'cmake_prefix_path')
+[1.161s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/hook/cmake_prefix_path.ps1'
+[1.162s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/hook/cmake_prefix_path.dsv'
+[1.163s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/hook/cmake_prefix_path.sh'
+[1.163s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node/lib'
+[1.163s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node/bin'
+[1.163s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node/lib/pkgconfig/turtlebot4_node.pc'
+[1.163s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node/lib/python3.10/site-packages'
+[1.164s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node/bin'
+[1.164s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/package.ps1'
+[1.164s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/package.dsv'
+[1.165s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/package.sh'
+[1.165s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/package.bash'
+[1.165s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/package.zsh'
+[1.165s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/colcon-core/packages/turtlebot4_node)
+[1.166s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_node)
+[1.166s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node' for CMake module files
+[1.166s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node' for CMake config files
+[1.166s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_node', 'cmake_prefix_path')
+[1.167s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/hook/cmake_prefix_path.ps1'
+[1.167s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/hook/cmake_prefix_path.dsv'
+[1.167s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/hook/cmake_prefix_path.sh'
+[1.167s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node/lib'
+[1.168s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node/bin'
+[1.168s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node/lib/pkgconfig/turtlebot4_node.pc'
+[1.168s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node/lib/python3.10/site-packages'
+[1.168s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_node/bin'
+[1.168s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/package.ps1'
+[1.169s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/package.dsv'
+[1.169s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/package.sh'
+[1.169s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/package.bash'
+[1.169s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/turtlebot4_node/package.zsh'
+[1.170s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_node/share/colcon-core/packages/turtlebot4_node)
+[1.170s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_ignition_bringup' with build type 'ament_cmake'
+[1.170s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_ignition_bringup'
+[1.170s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.170s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.185s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_bringup': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_bringup -- -j20 -l20
+[1.225s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_bringup' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_bringup -- -j20 -l20
+[1.227s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_bringup': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_bringup
+[1.253s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_bringup)
+[1.253s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup' for CMake module files
+[1.254s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_ignition_bringup' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_ignition_bringup
+[1.254s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup' for CMake config files
+[1.254s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_bringup', 'cmake_prefix_path')
+[1.255s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.ps1'
+[1.255s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.dsv'
+[1.256s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.sh'
+[1.256s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/bin'
+[1.256s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/lib/pkgconfig/turtlebot4_ignition_bringup.pc'
+[1.257s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/lib/python3.10/site-packages'
+[1.257s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/bin'
+[1.257s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.ps1'
+[1.258s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.dsv'
+[1.258s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.sh'
+[1.259s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.bash'
+[1.259s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.zsh'
+[1.260s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/colcon-core/packages/turtlebot4_ignition_bringup)
+[1.260s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_bringup)
+[1.261s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup' for CMake module files
+[1.261s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup' for CMake config files
+[1.262s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_bringup', 'cmake_prefix_path')
+[1.262s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.ps1'
+[1.262s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.dsv'
+[1.263s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.sh'
+[1.263s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/bin'
+[1.264s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/lib/pkgconfig/turtlebot4_ignition_bringup.pc'
+[1.264s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/lib/python3.10/site-packages'
+[1.264s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/bin'
+[1.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.ps1'
+[1.265s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.dsv'
+[1.265s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.sh'
+[1.265s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.bash'
+[1.266s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.zsh'
+[1.266s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup/share/colcon-core/packages/turtlebot4_ignition_bringup)
+[1.266s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_simulator' with build type 'ament_cmake'
+[1.266s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4_simulator/turtlebot4_simulator'
+[1.266s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.266s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.282s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_simulator': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup:/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup:/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_simulator -- -j20 -l20
+[1.318s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_simulator' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup:/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup:/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_simulator -- -j20 -l20
+[1.319s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_simulator': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup:/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup:/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_simulator
+[1.339s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_simulator)
+[1.340s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator' for CMake module files
+[1.340s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_simulator' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup:/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_bringup:/home/rokey/turtlebot4_ws/install/turtlebot4_viz:/home/rokey/turtlebot4_ws/install/turtlebot4_node:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_toolbox:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs:/home/rokey/turtlebot4_ws/install/turtlebot4_ignition_gui_plugins:/home/rokey/turtlebot4_ws/install/turtlebot4_description:/opt/ros/humble LD_LIBRARY_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_simulator
+[1.341s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator' for CMake config files
+[1.341s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_simulator', 'cmake_prefix_path')
+[1.341s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.ps1'
+[1.342s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.dsv'
+[1.342s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.sh'
+[1.343s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/bin'
+[1.343s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/lib/pkgconfig/turtlebot4_simulator.pc'
+[1.344s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/lib/python3.10/site-packages'
+[1.344s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/bin'
+[1.344s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.ps1'
+[1.345s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.dsv'
+[1.345s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.sh'
+[1.345s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.bash'
+[1.346s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.zsh'
+[1.346s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/colcon-core/packages/turtlebot4_simulator)
+[1.347s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_simulator)
+[1.347s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator' for CMake module files
+[1.347s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator' for CMake config files
+[1.347s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_simulator', 'cmake_prefix_path')
+[1.347s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.ps1'
+[1.348s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.dsv'
+[1.348s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.sh'
+[1.349s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/bin'
+[1.349s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/lib/pkgconfig/turtlebot4_simulator.pc'
+[1.349s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/lib/python3.10/site-packages'
+[1.349s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/bin'
+[1.349s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.ps1'
+[1.350s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.dsv'
+[1.350s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.sh'
+[1.350s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.bash'
+[1.351s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.zsh'
+[1.351s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_simulator/share/colcon-core/packages/turtlebot4_simulator)
+[1.417s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation PYTHONPATH=/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/python3.10/site-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/build --no-deps symlink_data
+[1.441s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation PYTHONPATH=/home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/lib/python3.10/site-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials/build --no-deps symlink_data
+[1.789s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_python_tutorials', 'pythonpath_develop')
+[1.789s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/hook/pythonpath_develop.ps1'
+[1.790s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation PYTHONPATH=/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/python3.10/site-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/build --no-deps symlink_data
+[1.790s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/hook/pythonpath_develop.dsv'
+[1.791s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/hook/pythonpath_develop.sh'
+[1.791s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials' for CMake module files
+[1.792s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials' for CMake config files
+[1.792s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib'
+[1.792s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/bin'
+[1.792s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/pkgconfig/turtlebot4_python_tutorials.pc'
+[1.792s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/python3.10/site-packages'
+[1.792s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_python_tutorials', 'pythonpath')
+[1.792s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/hook/pythonpath.ps1'
+[1.793s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/hook/pythonpath.dsv'
+[1.793s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/hook/pythonpath.sh'
+[1.793s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/bin'
+[1.793s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_python_tutorials)
+[1.794s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/package.ps1'
+[1.794s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/package.dsv'
+[1.794s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/package.sh'
+[1.794s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/package.bash'
+[1.795s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/turtlebot4_python_tutorials/package.zsh'
+[1.795s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/share/colcon-core/packages/turtlebot4_python_tutorials)
+[1.795s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_tutorials' with build type 'ament_cmake'
+[1.795s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/rokey/turtlebot4_ws/src/turtlebot4_tutorials/turtlebot4_tutorials'
+[1.795s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.795s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.806s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_openai_tutorials', 'pythonpath_develop')
+[1.806s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/hook/pythonpath_develop.ps1'
+[1.807s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials:/opt/ros/humble PYTHONPATH=/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials:/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/python3.10/site-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_tutorials -- -j20 -l20
+[1.807s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation PYTHONPATH=/home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/lib/python3.10/site-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials/build --no-deps symlink_data
+[1.808s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/hook/pythonpath_develop.dsv'
+[1.808s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/build/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/hook/pythonpath_develop.sh'
+[1.810s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials' for CMake module files
+[1.811s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials' for CMake config files
+[1.811s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/lib'
+[1.811s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/bin'
+[1.811s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/lib/pkgconfig/turtlebot4_openai_tutorials.pc'
+[1.812s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/lib/python3.10/site-packages'
+[1.812s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_openai_tutorials', 'pythonpath')
+[1.812s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/hook/pythonpath.ps1'
+[1.812s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/hook/pythonpath.dsv'
+[1.813s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/hook/pythonpath.sh'
+[1.813s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/bin'
+[1.814s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_openai_tutorials)
+[1.814s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/package.ps1'
+[1.815s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/package.dsv'
+[1.815s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/package.sh'
+[1.815s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/package.bash'
+[1.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/turtlebot4_openai_tutorials/package.zsh'
+[1.816s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_openai_tutorials/share/colcon-core/packages/turtlebot4_openai_tutorials)
+[1.848s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials:/opt/ros/humble PYTHONPATH=/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials:/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/python3.10/site-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rokey/turtlebot4_ws/build/turtlebot4_tutorials -- -j20 -l20
+[1.848s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials:/opt/ros/humble PYTHONPATH=/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials:/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/python3.10/site-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_tutorials
+[1.867s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_tutorials)
+[1.868s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials' for CMake module files
+[1.868s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rokey/turtlebot4_ws/build/turtlebot4_tutorials' returned '0': AMENT_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rokey/turtlebot4_ws/install/turtlebot4_navigation:/home/rokey/turtlebot4_ws/install/turtlebot4_cpp_tutorials:/opt/ros/humble PYTHONPATH=/home/rokey/turtlebot4_ws/build/turtlebot4_python_tutorials:/home/rokey/turtlebot4_ws/install/turtlebot4_python_tutorials/lib/python3.10/site-packages:/home/rokey/turtlebot4_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rokey/turtlebot4_ws/build/turtlebot4_tutorials
+[1.869s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials' for CMake config files
+[1.869s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_tutorials', 'cmake_prefix_path')
+[1.870s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/hook/cmake_prefix_path.ps1'
+[1.870s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/hook/cmake_prefix_path.dsv'
+[1.870s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/hook/cmake_prefix_path.sh'
+[1.871s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/bin'
+[1.871s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/lib/pkgconfig/turtlebot4_tutorials.pc'
+[1.871s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/lib/python3.10/site-packages'
+[1.871s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/bin'
+[1.871s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.ps1'
+[1.872s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.dsv'
+[1.872s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.sh'
+[1.872s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.bash'
+[1.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.zsh'
+[1.873s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/colcon-core/packages/turtlebot4_tutorials)
+[1.873s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_tutorials)
+[1.873s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials' for CMake module files
+[1.874s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials' for CMake config files
+[1.874s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_tutorials', 'cmake_prefix_path')
+[1.874s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/hook/cmake_prefix_path.ps1'
+[1.874s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/hook/cmake_prefix_path.dsv'
+[1.875s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/hook/cmake_prefix_path.sh'
+[1.875s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/bin'
+[1.875s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/lib/pkgconfig/turtlebot4_tutorials.pc'
+[1.876s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/lib/python3.10/site-packages'
+[1.876s] Level 1:colcon.colcon_core.environment:checking '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/bin'
+[1.876s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.ps1'
+[1.877s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.dsv'
+[1.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.sh'
+[1.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.bash'
+[1.878s] INFO:colcon.colcon_core.shell:Creating package script '/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/turtlebot4_tutorials/package.zsh'
+[1.878s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rokey/turtlebot4_ws/install/turtlebot4_tutorials/share/colcon-core/packages/turtlebot4_tutorials)
+[1.878s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.878s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.879s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.879s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.884s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.884s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.884s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.897s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.898s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rokey/turtlebot4_ws/install/local_setup.ps1'
+[1.898s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rokey/turtlebot4_ws/install/_local_setup_util_ps1.py'
+[1.899s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rokey/turtlebot4_ws/install/setup.ps1'
+[1.900s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rokey/turtlebot4_ws/install/local_setup.sh'
+[1.900s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rokey/turtlebot4_ws/install/_local_setup_util_sh.py'
+[1.901s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rokey/turtlebot4_ws/install/setup.sh'
+[1.901s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rokey/turtlebot4_ws/install/local_setup.bash'
+[1.902s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rokey/turtlebot4_ws/install/setup.bash'
+[1.902s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rokey/turtlebot4_ws/install/local_setup.zsh'
+[1.903s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rokey/turtlebot4_ws/install/setup.zsh'
