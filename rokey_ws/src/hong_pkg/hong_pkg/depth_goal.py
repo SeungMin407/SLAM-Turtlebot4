@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.duration import Duration
+from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, HistoryPolicy
 from rclpy.time import Time
 
 from sensor_msgs.msg import Image, CameraInfo, CompressedImage
@@ -18,6 +19,24 @@ import cv2
 import threading
 import math
 
+from ultralytics import YOLO
+from queue import Queue
+
+qos_amcl = QoSProfile(
+    history=HistoryPolicy.KEEP_LAST,
+    depth=1,
+    reliability=ReliabilityPolicy.RELIABLE,
+    durability=DurabilityPolicy.TRANSIENT_LOCAL
+)
+
+# class YoloDetection(Node):
+#     def __init__(self, model_path):
+#         super().__init__('yolo_detection')
+#         self.model = YOLO(model_path)
+    
+#     def detect(self, img):
+#         results = self.model.predict(img, verbose=False, stream=False)
+#         return results
 
 class DepthToMap(Node):
     def __init__(self):
@@ -31,13 +50,16 @@ class DepthToMap(Node):
         self.depth_topic = f'{ns}/oakd/stereo/image_raw'
         self.rgb_topic = f'{ns}/oakd/rgb/image_raw/compressed'
         self.info_topic = f'{ns}/oakd/rgb/camera_info'
-        self.amcl_pose = '/amcl_pose'
+        self.amcl_pose = '/robot4/amcl_pose'
 
         self.depth_image = None
         self.rgb_image = None
         self.clicked_point = None
         self.shutdown_requested = False
         self.display_image = None
+        self.robot_x = None
+        self.robot_y = None
+        self.robot_q = None
         self.stop_dist_m = 0.6
 
         self.gui_thread_stop = threading.Event()
@@ -61,30 +83,53 @@ class DepthToMap(Node):
         self.logged_rgb_shape = False
         self.logged_depth_shape = False
 
-        self.create_subscription(PoseWithCovarianceStamped, self.amcl_pose, self.amcl_callback, 1)
+        self.create_subscription(PoseWithCovarianceStamped, self.amcl_pose, self.amcl_callback, qos_amcl)
         self.create_subscription(CameraInfo, self.info_topic, self.camera_info_callback, 1)
         self.create_subscription(Image, self.depth_topic, self.depth_callback, 1)
         self.create_subscription(CompressedImage, self.rgb_topic, self.rgb_callback, 1)
 
         self.get_logger().info("TF Tree 안정화 시작. 5초 후 변환 시작합니다.")
         self.start_timer = self.create_timer(5.0, self.start_transform)
+
     
     def amcl_callback(self, msg):
-        x = msg.pose.pose.position.x
-        y = msg.pose.pose.position.y
+        with self.lock:
+            x = msg.pose.pose.position.x
+            y = msg.pose.pose.position.y
+            q = msg.pose.pose.orientation
 
-        q = msg.pose.pose.orientation
+            self.robot_x = x
+            self.robot_y = y
 
-        self.robot_x = x
-        self.robot_y = y
+            # Roll (x-axis rotation)
+            t0 = +2.0 * (q.w * q.x + q.y * q.z)
+            t1 = +1.0 - 2.0 * (q.x * q.x + q.y * q.y)
+            roll_x = math.atan2(t0, t1)
+            
+            # Pitch (y-axis rotation)
+            t2 = +2.0 * (q.w * q.y - q.z * q.x)
+            t2 = +1.0 if t2 > +1.0 else t2
+            t2 = -1.0 if t2 < -1.0 else t2
+            pitch_y = math.asin(t2)
+            
+            # Yaw (z-axis rotation)
+            t3 = +2.0 * (q.w * q.z + q.x * q.y)
+            t4 = +1.0 - 2.0 * (q.y * q.y + q.z * q.z)
+            yaw_z = math.atan2(t3, t4)
+            
+            self.robot_q = yaw_z
 
-        print(f'{self.robot_x} current pos')
+            self.get_logger().info(f'robot x = {self.robot_x}, y = {self.robot_y}')
+
+
 
 
     def start_transform(self):
         self.get_logger().info("TF Tree 안정화 완료. 변환 시작합니다.")
         self.timer = self.create_timer(0.2, self.display_images)
         self.start_timer.cancel()
+        # goal_pos = navigator.getPoseStamped([-1.9388, 0.263240], TurtleBot4Directions.NORTH)
+        # self.navigator.goToPose(goal_pose)
 
     def camera_info_callback(self, msg):
         with self.lock:
@@ -146,6 +191,7 @@ class DepthToMap(Node):
                 depth_colored = cv2.applyColorMap(depth_normalized.astype(np.uint8), cv2.COLORMAP_JET)
 
                 if click is not None:
+
                     x, y = click
                     z = float(depth[y, x]) / 1000.0
 
@@ -170,25 +216,26 @@ class DepthToMap(Node):
                         self.get_logger().info(f"Map coordinate: ({pt_map.point.x:.2f}, {pt_map.point.y:.2f}, {pt_map.point.z:.2f})")
 
                         # ROBO pos = robot_x, robot_y goal_pos = pt_map.point.x, pt_map.point.y
-                        P_robot = np.array([self.robot_x,self.robot_y])
-                        P_point = np.array([pt_map.point_y,pt_map.point.x])
+                        P_robot = np.array([self.robot_x, self.robot_y])
+                        P_point = np.array([pt_map.point.x, pt_map.point.y])
 
                         v = P_robot - P_point
                         dist = np.linalg.norm(v)
                         u = v / dist
 
-                        P_goal = P_point - u * 0.6
-
-                        print(f'{P_goal.x}dddddddddddd')
+                        P_goal = P_point + u * 0.6
+                        print(f'x = {pt_map.point.x}, y = {pt_map.point.y}')
+                        print(f'{self.robot_x}, {self.robot_y}')
+                        print(f'x = {P_goal[0]}, y = {P_goal[1]}')
 
 
                         goal_pose = PoseStamped()
                         goal_pose.header.frame_id = 'map'
                         goal_pose.header.stamp = self.get_clock().now().to_msg()
-                        goal_pose.pose.position.x = P_goal.x
-                        goal_pose.pose.position.y = P_goal.y
+                        goal_pose.pose.position.x = P_goal[0]
+                        goal_pose.pose.position.y = P_goal[1]
                         goal_pose.pose.position.z = 0.0
-                        yaw = 0.0
+                        yaw = float(self.robot_q)
                         qz = math.sin(yaw / 2.0)
                         qw = math.cos(yaw / 2.0)
                         goal_pose.pose.orientation = Quaternion(x=0.0, y=0.0, z=qz, w=qw)
@@ -235,17 +282,17 @@ class DepthToMap(Node):
 
 def main():
     rclpy.init()
-    node = DepthToMap()
+    node2 = DepthToMap()
     executor = MultiThreadedExecutor()
-    executor.add_node(node)
+    executor.add_node(node2)
 
     try:
         executor.spin()
     except KeyboardInterrupt:
         pass
-    node.gui_thread_stop.set()
-    node.gui_thread.join()
-    node.destroy_node()
+    node2.gui_thread_stop.set()
+    node2.gui_thread.join()
+    node2.destroy_node()
     cv2.destroyAllWindows()
 
 
