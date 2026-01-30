@@ -1,15 +1,3 @@
-import os
-import sys
-import rclpy
-import threading
-from queue import Queue
-from rclpy.node import Node
-from sensor_msgs.msg import Image
-from cv_bridge import CvBridge
-from ultralytics import YOLO
-from pathlib import Path
-import cv2
-
 import rclpy
 from rclpy.node import Node
 from rclpy.executors import MultiThreadedExecutor
@@ -31,77 +19,9 @@ import threading
 import math
 
 
-class YOLOImageSubscriber(Node):
-    def __init__(self, model):
-        super().__init__('yolo_image_subscriber')
-
-        self.yolo_center = None
-
-        self.model = model
-        self.bridge = CvBridge()
-        self.image_queue = Queue(maxsize=1)
-        self.should_shutdown = False
-        self.classNames = model.names if hasattr(model, 'names') else ['Object']
-
-        # 카메라 토픽 구독
-        self.subscription = self.create_subscription(
-            Image,
-            '/robot5/oakd/rgb/preview/image_raw',
-            self.listener_callback,
-            10)
-        
-        
-        self.thread = threading.Thread(target=self.detection_loop, daemon=True)
-        self.thread.start()
-
-    def listener_callback(self, msg):
-        try:
-            img = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
-            if not self.image_queue.full():
-                self.image_queue.put(img)
-        except Exception as e:
-            self.get_logger().error(f"Image conversion failed: {e}")
-    
-    # 추론
-    def detection_loop(self):
-        while not self.should_shutdown:
-            try:
-                img = self.image_queue.get(timeout=0.5)
-            except:
-                continue
-
-            results = self.model.predict(img, stream=True)
-            
-            for r in results:
-                if not hasattr(r, 'boxes') or r.boxes is None:
-                    continue
-                for box in r.boxes:
-                    x1, y1, x2, y2 = map(int, box.xyxy[0])      # 좌표 추출 # api에서 가져온거심
-                    cls = int(box.cls[0]) if box.cls is not None else 0
-                    conf = float(box.conf[0]) if box.conf is not None else 0.0
-
-                    cx = (x1+x1)/2
-                    cy = (y1+y2)/2
-
-                    self.yolo_center = (cx,cy)
-
-                    label = f"{self.classNames[cls]} {conf:.2f}"
-                    cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2)
-                    cv2.putText(img, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
-
-            cv2.imshow("YOLOv8 Detection", img)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                self.get_logger().info("Shutdown requested via 'q'")
-                self.should_shutdown = True
-                break
-
-
-
 class DepthToMap(Node):
     def __init__(self):
         super().__init__('depth_to_map_node')
-
-  
 
         self.bridge = CvBridge()
         self.K = None
@@ -114,7 +34,7 @@ class DepthToMap(Node):
 
         self.depth_image = None
         self.rgb_image = None
-        # self.clicked_point = None
+        self.clicked_point = None
         self.shutdown_requested = False
         self.display_image = None
 
@@ -186,17 +106,17 @@ class DepthToMap(Node):
         except Exception as e:
             self.get_logger().error(f"Compressed RGB decode failed: {e}")
 
-    # def mouse_callback(self, event, x, y, flags, param):
-    #     if event == cv2.EVENT_LBUTTONDOWN:
-    #         with self.lock:
-    #             self.clicked_point = (x, y)
-    #         self.get_logger().info(f"Clicked RGB pixel: ({x}, {y})")
+    def mouse_callback(self, event, x, y, flags, param):
+        if event == cv2.EVENT_LBUTTONDOWN:
+            with self.lock:
+                self.clicked_point = (x, y)
+            self.get_logger().info(f"Clicked RGB pixel: ({x}, {y})")
 
     def display_images(self):
         with self.lock:
             rgb = self.rgb_image.copy() if self.rgb_image is not None else None
             depth = self.depth_image.copy() if self.depth_image is not None else None
-            # click = self.clicked_point
+            click = self.clicked_point
             frame_id = getattr(self, 'camera_frame', None)
 
         if rgb is not None and depth is not None and frame_id:
@@ -206,43 +126,48 @@ class DepthToMap(Node):
                 depth_normalized = cv2.normalize(depth_display, None, 0, 255, cv2.NORM_MINMAX)
                 depth_colored = cv2.applyColorMap(depth_normalized.astype(np.uint8), cv2.COLORMAP_JET)
 
-            
-                x, y = self.yolo_center
-                z = float(depth[y, x]) / 1000.0
-                if 0.2 < z < 5.0:
+                if click is not None:
+                    x, y = click
+                    z = float(depth[y, x]) / 1000.0
+                    if 0.2 < z < 5.0:
+                        fx, fy = self.K[0, 0], self.K[1, 1]
+                        cx, cy = self.K[0, 2], self.K[1, 2]
 
-                    X = (x - cx) * z / fx
-                    Y = (y - cy) * z / fy
-                    Z = z
+                        X = (x - cx) * z / fx
+                        Y = (y - cy) * z / fy
+                        Z = z
 
-                    pt_camera = PointStamped()
-                    pt_camera.header.stamp = Time().to_msg()
-                    pt_camera.header.frame_id = frame_id
-                    pt_camera.point.x = X
-                    pt_camera.point.y = Y
-                    pt_camera.point.z = Z
+                        pt_camera = PointStamped()
+                        pt_camera.header.stamp = Time().to_msg()
+                        pt_camera.header.frame_id = frame_id
+                        pt_camera.point.x = X
+                        pt_camera.point.y = Y
+                        pt_camera.point.z = Z
 
-                    pt_map = self.tf_buffer.transform(pt_camera, 'map', timeout=Duration(seconds=1.0))
-                    self.get_logger().info(f"Map coordinate: ({pt_map.point.x:.2f}, {pt_map.point.y:.2f}, {pt_map.point.z:.2f})")
+                        pt_map = self.tf_buffer.transform(pt_camera, 'map', timeout=Duration(seconds=1.0))
+                        self.get_logger().info(f"Map coordinate: ({pt_map.point.x:.2f}, {pt_map.point.y:.2f}, {pt_map.point.z:.2f})")
 
-                    goal_pose = PoseStamped()
-                    goal_pose.header.frame_id = 'map'
-                    goal_pose.header.stamp = self.get_clock().now().to_msg()
-                    goal_pose.pose.position.x = pt_map.point.x
-                    goal_pose.pose.position.y = pt_map.point.y
-                    goal_pose.pose.position.z = 0.0
-                    yaw = 0.0
-                    qz = math.sin(yaw / 2.0)
-                    qw = math.cos(yaw / 2.0)
-                    goal_pose.pose.orientation = Quaternion(x=0.0, y=0.0, z=qz, w=qw)
+                        goal_pose = PoseStamped()
+                        goal_pose.header.frame_id = 'map'
+                        goal_pose.header.stamp = self.get_clock().now().to_msg()
+                        goal_pose.pose.position.x = pt_map.point.x
+                        goal_pose.pose.position.y = pt_map.point.y
+                        goal_pose.pose.position.z = 0.0
+                        yaw = 0.0
+                        qz = math.sin(yaw / 2.0)
+                        qw = math.cos(yaw / 2.0)
+                        goal_pose.pose.orientation = Quaternion(x=0.0, y=0.0, z=qz, w=qw)
 
-                    self.navigator.goToPose(goal_pose)
-                    self.get_logger().info("Sent navigation goal to map coordinate.")
+                        self.navigator.goToPose(goal_pose)
+                        self.get_logger().info("Sent navigation goal to map coordinate.")
 
-                cv2.circle(rgb_display, (x, y), 4, (0, 255, 0), -1)
-                text = f"{z:.2f} m" if 0.2 < z < 5.0 else "Invalid"
-                cv2.putText(depth_colored, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
-                cv2.circle(depth_colored, (x, y), 4, (255, 255, 255), -1)
+                        with self.lock:
+                            self.clicked_point = None
+
+                    cv2.circle(rgb_display, (x, y), 4, (0, 255, 0), -1)
+                    text = f"{z:.2f} m" if 0.2 < z < 5.0 else "Invalid"
+                    cv2.putText(depth_colored, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+                    cv2.circle(depth_colored, (x, y), 4, (255, 255, 255), -1)
 
                 combined = np.hstack((rgb_display, depth_colored))
                 with self.lock:
@@ -254,7 +179,7 @@ class DepthToMap(Node):
         cv2.namedWindow('RGB (left) | Depth (right)', cv2.WINDOW_NORMAL)
         cv2.resizeWindow('RGB (left) | Depth (right)', 1280, 480)
         cv2.moveWindow('RGB (left) | Depth (right)', 100, 100)
-        # cv2.setMouseCallback('RGB (left) | Depth (right)', self.mouse_callback)
+        cv2.setMouseCallback('RGB (left) | Depth (right)', self.mouse_callback)
 
         while not self.gui_thread_stop.is_set():
             with self.lock:
@@ -274,13 +199,13 @@ class DepthToMap(Node):
 
 
 def main():
-    rclpy.init()            # ros2
-    node = DepthToMap()     # 노드 생성, 모든 로직 여기에 있음
-    executor = MultiThreadedExecutor()  # 멀티 쓰레드 생성
-    executor.add_node(node)             # 멀티쓰레드로 진행 # excutor가 node를 관리한다는 선언
+    rclpy.init()
+    node = DepthToMap()
+    executor = MultiThreadedExecutor()
+    executor.add_node(node)
 
     try:
-        executor.spin()                 # 프로그램의 본체. 여기서 ros 이벤트 루프 반복.
+        executor.spin()
     except KeyboardInterrupt:
         pass
     node.gui_thread_stop.set()
