@@ -23,6 +23,7 @@ from .utils.depth_util import DepthProcessor
 from .utils.cv_util import CVProcessor
 from .utils.math_util import MathProcessor 
 from .utils.yolo_util import YOLOProcessor
+from .actions.rotation_manager import RotationManager
 
 # AMCL QoS 설정
 qos_amcl = QoSProfile(
