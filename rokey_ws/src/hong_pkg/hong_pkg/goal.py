@@ -25,6 +25,16 @@ from .utils.math_util import MathProcessor
 from .utils.yolo_util import YOLOProcessor
 from .actions.rotation_manager import RotationManager
 
+from enum import Enum, auto
+
+class RobotState(Enum):
+    START = auto()
+    ROBOT_READY = auto()
+    SEARCHING = auto()
+    WAITING_USER = auto()
+    APPROACHING = auto()
+    DONE = auto()
+
 # AMCL QoS 설정
 qos_amcl = QoSProfile(
     history=HistoryPolicy.KEEP_LAST,
@@ -41,10 +51,6 @@ class DepthToMap(Node):
         self.lock = threading.Lock()
         
         self.nav = NavProcessor()
-        self.nav.dock() 
-        self.nav.nav_setup(0.0, 0.0, 0.0)
-        self.nav.undock()
-
         self.depth_proc = DepthProcessor()
         self.cv = CVProcessor()
         self.math = MathProcessor()
@@ -53,6 +59,7 @@ class DepthToMap(Node):
         self.rotator = RotationManager(self)
 
         # 변수 초기화
+        self.state = RobotState.START
         self.depth_image = None
         self.rgb_image = None
         self.camera_frame = None
@@ -88,8 +95,9 @@ class DepthToMap(Node):
         self.start_timer = self.create_timer(5.0, self.start_transform)
 
     def start_callback(self, msg):
-        if msg.data is True:
+        if msg.data is True and self.state == RobotState.START:
             self.get_logger().info("출발 신호 받았습니다.")
+            self.state = RobotState.ROBOT_READY
         else :
             pass
 
@@ -147,13 +155,27 @@ class DepthToMap(Node):
 
         rgb_detected, detections = self.yolo.detect_tracking_box(rgb)
 
-        check = self.nav.search_spin_time(detections, self.rotator, 2.0)
+        if self.state == RobotState.ROBOT_READY:
+            self.nav.dock() 
+            self.nav.nav_setup(0.0, 0.0, 0.0)
+            self.nav.undock()
+            self.state = RobotState.SEARCHING
 
-        if check:
-            if click is not None and frame_id:
+        elif self.state == RobotState.SEARCHING:
+            is_found = self.nav.search_spin_time(detections, self.rotator, 2.0)
+            if is_found:
+                self.state = RobotState.WAITING_USER
+
+        elif self.state == RobotState.WAITING_USER:
+            is_still = self.nav.search_spin_time(detections, self.rotator, 2.0)
+
+            if not is_still:
+                 self.state = RobotState.SEARCHING
+
+            elif click is not None:
                 x, y = click
                 click_check, data = self.yolo.is_bounding_box(detections, x, y)
-                print(f"cneter : {data}, cliekc : {x}, {y}")
+
                 if click_check and data is not None:
                     cx, cy = data
                     pt_map = self.depth_proc.get_xy_transform(self.tf_buffer, depth, int(cx), int(cy), frame_id)
@@ -162,8 +184,17 @@ class DepthToMap(Node):
                         P_goal, yaw_face = self.math.get_standoff_goal_yaw(self.robot_x, self.robot_y, pt_map, distance=0.6)
                         self.get_logger().info(f"Goal Set: ({P_goal[0]:.2f}, {P_goal[1]:.2f})")
                         self.nav.go_to_pose_yaw(self.get_clock().now().to_msg(), P_goal, yaw_face)
+                        self.state = RobotState.APPROACHING
                     else:
                         self.get_logger().warn("유효하지 않은 좌표거나 Depth 범위 밖입니다.")
+
+        elif self.state == RobotState.APPROACHING:
+            if self.nav.navigator.isTaskComplete():
+                self.state = RobotState.DONE
+
+        elif self.state == RobotState.DONE:
+            time.sleep(2.0)
+            self.state = RobotState.SEARCHING
 
         with self.lock:
             if click is not None:
