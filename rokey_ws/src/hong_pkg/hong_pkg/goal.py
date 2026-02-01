@@ -77,7 +77,7 @@ class DepthToMap(Node):
         self.rgb_topic = f'{ns}/oakd/rgb/image_raw/compressed'
         self.info_topic = f'{ns}/oakd/rgb/camera_info'
         self.amcl_pose = '/robot4/amcl_pose'
-        self.start_topic = '/robot4/start_topic'
+        self.start_topic = '/start_topic'
 
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
