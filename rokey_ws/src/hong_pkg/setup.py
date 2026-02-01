@@ -28,7 +28,11 @@ setup(
 	'depth_camera_yolo = hong_pkg.depth_camera_yolo:main',
 	'depth = hong_pkg.depth:main',
 	'nav_through_poses = hong_pkg.nav_through_poses:main',
-	'follow_waypoints = hong_pkg.follow_waypoints:main'
+	'follow_waypoints = hong_pkg.follow_waypoints:main',
+	'hong_yolo_compact = hong_pkg.hong_yolo_compact:main',
+        'hong_yolo_compact2 = hong_pkg.hong_yolo_compact2:main',
+        'hong_depth = hong_pkg.hong_depth:main',
+        '3_3_c_depth_to_nav_goal = hong_pkg.3_3_c_depth_to_nav_goal:main'
         ],
     },
 )
