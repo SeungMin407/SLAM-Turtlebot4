@@ -2,7 +2,7 @@ from irobot_create_msgs.action import DriveDistance
 from .action_base import ActionBase 
 
 
-class DriveManager(ActionBase):
+class DriveDisManager(ActionBase):
     def __init__(self, node):
         super().__init__(node, DriveDistance, '/robot4/drive_distance')
         
