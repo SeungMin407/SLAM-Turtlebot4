@@ -8,6 +8,9 @@ from sensor_msgs.msg import BatteryState
 from threading import Lock, Thread
 from enum import Enum, auto
 
+# custom class
+from .modules.cooperation_process import CooperationProcess
+
 class RobotState(Enum):
     START = auto()
     ROBOT_READY = auto()
@@ -27,6 +30,8 @@ class Batterytest(Node):
         self.state = RobotState.START
         self.battery_percent = 0.0 # None 보다는 float 초기값 권장
 
+        self.battery = CooperationProcess()
+
         # Depth Topic 변수는 현재 안 쓰이지만 일단 유지
         ns = self.get_namespace()
         self.depth_topic = f'{ns}/oakd/stereo/image_raw'
@@ -43,8 +48,11 @@ class Batterytest(Node):
         # 스레드 락 사용
         with self.lock:
             self.battery_percent = batt_msg.percentage
-            # ROS 2 로그 스타일로 출력
-            self.get_logger().info(f'Battery: {self.battery_percent:.2f}%')
+
+    def rootController(self):
+        if self.state == RobotState.START:
+            self.battery.battery_check(self.battery_percent)
+
 
 def main(args=None):
     rclpy.init(args=args)
