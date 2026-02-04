@@ -6,7 +6,7 @@ import time
 class NavProcessor():
     def __init__(self):
         self.navigator = TurtleBot4Navigator()
-        self.navigator.waitUntilNav2Active()
+        #self.navigator.waitUntilNav2Active()
 
         self.last_detection_time = 0
 

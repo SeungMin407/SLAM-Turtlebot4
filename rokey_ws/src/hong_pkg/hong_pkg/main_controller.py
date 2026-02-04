@@ -4,12 +4,15 @@ from rclpy.executors import MultiThreadedExecutor
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import BatteryState
 from std_msgs.msg import Int32, Int32MultiArray # MultiArray 추가
+from nav2_simple_commander.robot_navigator import TaskResult
 
 from threading import Lock
 from enum import Enum, auto
 
 # 모듈 import
-from .modules.battery_processor import BatteryProcessor
+from .modules.main_processor import MainProcessor
+from .utils.nav_util import NavProcessor
+from .modules.drive_commander import DriveCommander
 
 class RobotState(Enum):
     CHARGING = auto()        # 도킹 스테이션에서 대기/충전
@@ -30,16 +33,22 @@ class MainController(Node):
         self.state = RobotState.CHARGING
         
         # 라인별 상자 갯수
-        self.line1_count = 3
-        self.line2_count = 2
+        self.line1_count = 2
+        self.line2_count = 0
         
         # 라인별 작업 상태
         self.line_status = {1: False, 2: False}
         
         # 로봇 별 아이디 설정
         ns = self.get_namespace()
-        self.my_robot_id = ns
-        self.battery_proc = BatteryProcessor(self.my_robot_id)
+        self.get_logger().info(ns)
+        if ns == "/robot4":
+            self.my_robot_id = 4
+        else:
+            self.my_robot_id = 5
+
+        self.battery_proc = MainProcessor(self.my_robot_id)
+        self.nav = NavProcessor()
 
         # 배터리 상태 sub
         self.battery_state_subscriber = self.create_subscription(
@@ -104,28 +113,52 @@ class MainController(Node):
     # 메인 루프
     def main_controller(self):
         if self.state == RobotState.CHARGING:
+            if self.line1_count > 0 and self.my_robot_id == 4:
+                self.nav.undock()
+                while not self.nav.navigator.isTaskComplete():
+                    time.sleep(0.1)
+                self.state = RobotState.MOVE_TO_PICKUP
             
+            if self.line2_count > 0 and self.my_robot_id == 5:
+                self.nav.undock()
+                while not self.nav.navigator.isTaskComplete():
+                    time.sleep(0.1)
+                self.state = RobotState.MOVE_TO_PICKUP
         elif self.state == RobotState.MOVE_TO_PICKUP:
+            goal = [[-1.59,-0.47], [-1.58, -1.45]]
+            self.follow_move_and_wait(goal, 0.0)
+            self.state = RobotState.WAITTING
+        elif self.state == RobotState.WAITTING:
+            with self.lock:
+                current_battery = self.battery_percent
+                q1 = self.line1_count
+                q2 = self.line2_count
+                current_status = self.line_status.copy()
 
+            self.battery_proc.pick_up_waiting(
+                current_battery,
+                q1, 
+                q2, 
+                current_status
+            )
+            self.state = RobotState.LOADING
+        elif self.state == RobotState.LOADING:
+            time.sleep(5)
+            self.state = RobotState.MOVE_TO_DEST
+        elif self.state == RobotState.MOVE_TO_DEST:
+            pass
 
+    def follow_move_and_wait(self, goal_array, yaw):
+        self.nav.go_to_follow(goal_array = goal_array, goal_or = yaw)
+        # waitting
+        while not self.nav.navigator.isTaskComplete():
+            time.sleep(0.1)
 
-
-        with self.lock:
-            current_battery = self.battery_percent
-            q1 = self.line1_count
-            q2 = self.line2_count
-            current_status = self.line_status.copy()
-
-        self.battery_proc.pick_up_waiting(
-            current_battery,
-            q1, 
-            q2, 
-            current_status
-        )
+        print("도착 완료 (Action Complete)")
 
 def main(args=None):
     rclpy.init(args=args)
-    node = Batterytest()
+    node = MainController()
     executor = MultiThreadedExecutor()
     executor.add_node(node)
 

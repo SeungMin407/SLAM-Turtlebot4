@@ -1,7 +1,7 @@
 from ..utils.nav_util import NavProcessor
 import time
 
-class BatteryProcessor:
+class MainProcessor:
     def __init__(self, my_robot_id):
 
         # 로봇 아이디별로 라인 배정
