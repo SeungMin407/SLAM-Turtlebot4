@@ -128,6 +128,7 @@ class MainController(Node):
             goal = [[-1.59,-0.47], [-1.58, -1.45]]
             self.follow_move_and_wait(goal, 0.0)
             self.state = RobotState.WAITTING
+
         elif self.state == RobotState.WAITTING:
             with self.lock:
                 current_battery = self.battery_percent
