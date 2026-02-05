@@ -1,59 +1,65 @@
 from ..utils.nav_util import NavProcessor
+from ..enums.robot_state import RobotState
 import time
+
+ROBOT_CONFIG = {
+    4: {  # 로봇 4번 설정
+        'my_line': 1,
+        'other_line': 2,
+        'dock_coords': [[-1.59, -0.47]],    # 도킹 대기 장소
+        'support_coords': [[-2.90, -1.67]]  # 2번 라인 지원 장소
+    },
+    'default': {  # 그 외 로봇 (예: 5번) 설정
+        'my_line': 2,
+        'other_line': 1,
+        'dock_coords': [[-1.53, 0.85]],     # 도킹 대기 장소
+        'support_coords': [[-1.58, -1.45]]  # 1번 라인 지원 장소
+    }
+}
 
 class MainProcessor:
     def __init__(self, my_robot_id):
-        
         self.robot_id = my_robot_id
-
-        # 로봇 아이디별로 라인 배정
-        if my_robot_id == 4:
-            self.my_line_id = 1
-            self.other_line_id = 2
-        else :
-            self.my_line_id = 2
-            self.other_line_id = 1
         self.nav = NavProcessor()
 
-    # battery percent, 자신의 라인 박스 갯수, 다른 라인 박스 갯수, 각 라인 작업 상태
+        # 로봇 ID에 맞는 설정을 불러옵니다. (없으면 default 사용)
+        config = ROBOT_CONFIG.get(self.robot_id, ROBOT_CONFIG['default'])
+        
+        self.my_line_id = config['my_line']
+        self.other_line_id = config['other_line']
+        self.dock_coords = config['dock_coords']
+        self.support_coords = config['support_coords']
+
+        print(f"🤖 Robot {self.robot_id} 초기화 완료 (My Line: {self.my_line_id})")
+
     def pick_up_waiting(self, battery_percent, my_queue_count, other_queue_count, line_status):
-        battery = battery_percent * 100
-        # 배터리가 30프로 미만일때 도킹하러감
+        battery = battery_percent * 100 if battery_percent <= 1.0 else battery_percent
+
         if battery < 30:
-            print('Low Battery! Go to Dock')
-            if self.robot_id == 4:
-                goal = [[-1.59, -0.47]]
-                self.move_and_wait(goal, 0.0)
-            else:
-                goal = [[-1.53, 0.85]]
-                self.move_and_wait(goal, 0.0)
+            print(f'⚡ 배터리 부족({battery:.1f}%)! 도킹 장소로 이동합니다.')
+            self.move_and_wait(self.dock_coords)
+            return RobotState.DOCKING
 
         elif my_queue_count > 0:
             if line_status.get(self.my_line_id) == True:
-                print(f"내 라인({self.my_line_id}) 작업 대기 중 (Occupied)...")
-                return
-            
-            print(f'내 라인({self.my_line_id}) 작업 시작')
+                print(f"✋ 내 라인({self.my_line_id}) 작업 대기 중 (Occupied)...")
+                return RobotState.WAITTING
+            return RobotState.LOADING
 
         elif other_queue_count > 0:
             if line_status.get(self.other_line_id) == True:
-                print(f"{self.other_line_id}번 지원 대기 중 (Occupied)...")
-                return
-            if self.robot_id == 4:
-                goal = [[-2.90, -1.67]]
-                self.move_and_wait(goal, 0.0)
-            else :
-                goal = [[-1.58, -1.45]]
-                self.move_and_wait(goal, 0.0)
+                print(f"✋ {self.other_line_id}번 라인 지원 대기 중 (Occupied)...")
+                return RobotState.WAITTING
             
-            print(f"{self.other_line_id}번 라인 지원 출발")
+            self.move_and_wait(self.support_coords)
+            return RobotState.LOADING
         else:
-            pass
-    # x 좌표, y 좌표, 로봇이 바라보는 방향
-    def move_and_wait(self, goal_array, yaw):
-        self.nav.go_to_follow(goal_array = goal_array, goal_or = yaw)
-        # waitting
+            return RobotState.WAITTING
+
+    def move_and_wait(self, goal_array):
+        self.nav.way_point_no_ori(goal_array=goal_array)
+        
         while not self.nav.navigator.isTaskComplete():
             time.sleep(0.1)
 
-        print("도착 완료 (Action Complete)")
+        print("✅ 도착 완료 (Action Complete)")

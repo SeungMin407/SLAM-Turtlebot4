@@ -3,7 +3,7 @@ from rclpy.node import Node
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import BatteryState
-from std_msgs.msg import Int32, Int32MultiArray # MultiArray 추가
+from std_msgs.msg import Int32, Int32MultiArray, Bool # MultiArray 추가
 from nav2_simple_commander.robot_navigator import TaskResult
 
 from threading import Lock
@@ -14,15 +14,10 @@ import time
 from .modules.main_processor import MainProcessor
 from .utils.nav_util import NavProcessor
 from .modules.drive_commander import DriveCommander
+from .enums.robot_state import RobotState
 
-class RobotState(Enum):
-    CHARGING = auto()        # 도킹 스테이션에서 대기/충전
-    MOVE_TO_PICKUP = auto()  # 라인으로 이동
-    WAITTING = auto()        # 배터리 상태와 라인 박스 상태 체크
-    LOADING = auto()         # 5초 기다리기 (박스 받는 중)
-    MOVE_TO_DEST = auto()    # 목적지로 배달
-    RETURN_TO_LINE = auto()  # 라인으로 복귀 (다음 작업 대기)
-    STOP = auto()
+# /box_placed
+# std_msgs/msg/Bool
 
 class MainController(Node):
     def __init__(self):
@@ -31,15 +26,16 @@ class MainController(Node):
         self.lock = Lock()
 
         # val
-        self.battery_percent = 0.0
+        self.battery_percent = 1.0
         self.state = RobotState.CHARGING
         
         # 라인별 상자 갯수
-        self.line1_count = 0
-        self.line2_count = 0
+        self.line1_count = 2
+        self.line2_count = 3
         
         # 라인별 작업 상태
         self.line_status = {1: False, 2: False}
+        self.start = False
         
         # 로봇 별 아이디 설정
         ns = self.get_namespace()
@@ -51,6 +47,7 @@ class MainController(Node):
 
         self.battery_proc = MainProcessor(self.my_robot_id)
         self.nav = NavProcessor()
+        self.drive = DriveCommander(self)
 
         # 배터리 상태 sub
         self.battery_state_subscriber = self.create_subscription(
@@ -84,7 +81,19 @@ class MainController(Node):
             1
         )
 
+        # 시작 알림
+        self.start_subscriber = self.create_subscription(
+            Bool,
+            '/box_placed',
+            self.start_callback,
+            1
+        )
+
         self.timer = self.create_timer(0.1, self.main_controller)
+    
+    def start_callback(self, msg):
+        with self.lock:
+            self.start = msg.data
 
     # 데이터가 비어 있지 않르면 라인 상태 저장
     def line_status_callback(self, msg):
@@ -117,21 +126,27 @@ class MainController(Node):
         if self.state == RobotState.CHARGING:
             if self.line1_count > 0 and self.my_robot_id == 4:
                 self.nav.undock()
-                if self.nav.navigator.isTaskComplete():
-                    self.state = RobotState.STOP
+                while not self.nav.navigator.isTaskComplete():
+                    time.sleep(0.1)
 
                 self.state = RobotState.MOVE_TO_PICKUP
             
             if self.line2_count > 0 and self.my_robot_id == 5:
                 self.nav.undock()
-                if self.nav.navigator.isTaskComplete():
-                    self.state = RobotState.STOP
-
+                while not self.nav.navigator.isTaskComplete():
+                    time.sleep(0.1)
+                    
                 self.state = RobotState.MOVE_TO_PICKUP
 
         elif self.state == RobotState.MOVE_TO_PICKUP:
-            goal = [[-1.59,-0.47], [-1.58, -1.45]]
-            self.follow_move_and_wait(goal, 0.0)
+            if self.my_robot_id == 4:
+                goal = [[-1.59,-0.47], [-1.61, -1.70]]
+                self.follow_move_and_wait(goal)
+
+            if self.my_robot_id == 5:
+                goal = [[-1.53, 0.85], [-2.88, -0.47], [-2.87, -1.66]]
+                self.follow_move_and_wait(goal)
+
             self.state = RobotState.WAITTING
 
         elif self.state == RobotState.WAITTING:
@@ -141,30 +156,38 @@ class MainController(Node):
                 q2 = self.line2_count
                 current_status = self.line_status.copy()
 
-            self.battery_proc.pick_up_waiting(
+            self.state = self.battery_proc.pick_up_waiting(
                 current_battery,
                 q1, 
-                q2, 
+                q2,
                 current_status
             )
             self.state = RobotState.LOADING
 
         elif self.state == RobotState.LOADING:
-            time.sleep(5)
-            self.state = RobotState.MOVE_TO_DEST
+            if self.start:
+                self.state = RobotState.MOVE_TO_DEST
+            else:
+                self.state = RobotState.LOADING
+                self.get_logger().info(f'작업 대기중')
 
         elif self.state == RobotState.MOVE_TO_DEST:
-            pass
-        elif self.state == RobotState.STOP:
-            pass
+            self.get_logger().info(f'목적지 출발')
+            self.state = RobotState.WAITTING
+        elif self.state == RobotState.DOCKING:
+            self.docking_wait()
+            self.state = RobotState.CHARGING
 
-    def follow_move_and_wait(self, goal_array, yaw):
-        self.nav.go_to_follow(goal_array = goal_array, goal_or = yaw)
-        # waitting
-        if self.nav.navigator.isTaskComplete():
-            self.state = RobotState.STOP
+    def follow_move_and_wait(self, goal_array):
+        self.nav.way_point_no_ori(goal_array = goal_array)
+        while not self.nav.navigator.isTaskComplete():
+            time.sleep(0.1)
+    
+    def docking_wait(self):
+        self.nav.dock()
+        while not self.nav.navigator.isTaskComplete():
+            time.sleep(0.1)
             
-
 def main(args=None):
     rclpy.init(args=args)
     node = MainController()

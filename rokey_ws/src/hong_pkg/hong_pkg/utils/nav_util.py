@@ -2,7 +2,7 @@ from turtlebot4_navigation.turtlebot4_navigator import TurtleBot4Directions, Tur
 from geometry_msgs.msg import PoseWithCovarianceStamped, PoseStamped, Quaternion
 import math
 import time
-
+from builtin_interfaces.msg import Time
 class NavProcessor():
     def __init__(self):
         self.navigator = TurtleBot4Navigator()
@@ -118,3 +118,53 @@ class NavProcessor():
             self.navigator.undock()
         else:
             print('이미 언독되어 있습니다 (로봇 위치 확인 필요).')
+    def yaw_to_quat(self, yaw_rad: float) -> Quaternion:
+        q = Quaternion()
+        q.x = 0.0
+        q.y = 0.0
+        q.z = math.sin(yaw_rad / 2.0)
+        q.w = math.cos(yaw_rad / 2.0)
+        return q
+    def make_pose(self, x, y, yaw_rad):
+        pose = PoseStamped()
+        pose.header.frame_id = "map"
+        pose.header.stamp = Time(sec=0, nanosec=0)
+        pose.pose.position.x = float(x)
+        pose.pose.position.y = float(y)
+        pose.pose.orientation = self.yaw_to_quat(yaw_rad)
+        return pose
+    # 회전 없이 깔끔한 waypoint
+    def way_point_no_ori(self, goal_array, goal_or=None, start_x=None, start_y=None, start_or=None):
+        if start_x is not None and start_y is not None:
+            if start_or is None:
+                start_or = TurtleBot4Directions.NORTH
+            self.nav_setup(start_x, start_y, start_or)
+
+        goal_pose = []
+        final_yaw = None
+        if goal_or is not None:
+            # TurtleBot4Directions 값이 degree이므로 rad로 변환
+            final_yaw = math.radians(float(goal_or))
+        # 다음 목적지 방향으로 회전
+        for i, (x, y) in enumerate(goal_array):
+            is_last = (i == len(goal_array) - 1)
+
+            if not is_last:
+                nx, ny = goal_array[i + 1]
+                yaw = math.atan2(ny - y, nx - x)  # 이동 방향
+            else:
+                # 최종 방향으로 설정
+                if final_yaw is not None:
+                    yaw = final_yaw
+                else:
+                    # goal_or 안 주면 마지막도 "이동방향 유지"(직전 방향) 느낌으로
+                    if len(goal_array) >= 2:
+                        px, py = goal_array[i - 1]
+                        yaw = math.atan2(y - py, x - px)
+                    else:
+                        yaw = 0.0
+
+            goal_pose.append(self.make_pose(x, y, yaw))
+
+        self.navigator.startFollowWaypoints(goal_pose)
+        
