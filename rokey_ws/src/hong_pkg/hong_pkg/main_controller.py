@@ -107,6 +107,7 @@ class MainController(Node):
                 (-5.05, 2.67)],
         }
         self.wait_point = (-2.92, 2.40)
+        self.wait_point2 = (-2.93, 0.75)
 
         # QR 코드 구독
         self.qr_id1_sub = self.create_subscription(
@@ -286,14 +287,14 @@ class MainController(Node):
             if self.start2:
                 self.state = RobotState.MOVE_TO_DEST
             else:
-                self.state2 = RobotState.LOADING
+                self.state = RobotState.LOADING
                 self.get_logger().info(f'작업 대기중')
 
         elif self.state == RobotState.MOVE_TO_DEST:
             if self.my_robot_id == 4:
-                check_detect(self.qr_goal_map)
+                self.check_detect(self.qr_goal_map)
             else:
-                check_detect(self.qr_goal_map2)
+                self.check_detect(self.qr_goal_map2)
 
         elif self.state == RobotState.STOP:
             pass
@@ -320,11 +321,14 @@ class MainController(Node):
 
         self.get_logger().info(f"QR {qr_id} 목표로 이동 시작")
         goal_array = qr_goal_map[qr_id]
-        Thread(target=self.move_to_goal, args=(goal_array, qr_id), daemon=True).start()
+        if self.my_robot_id == 4:
+            Thread(target=self.move_to_goal, args=(goal_array, qr_id, self.wait_point), daemon=True).start()
+        else:
+            Thread(target=self.move_to_goal, args=(goal_array, qr_id, self.wait_point2), daemon=True).start()
         self.state = RobotState.STOP
 
 
-    def move_to_goal(self, goal_array, qr_id):
+    def move_to_goal(self, goal_array, qr_id, wait_point):
         def pub_work():
             msg = Int32()
             msg.data = int(qr_id)
@@ -334,7 +338,7 @@ class MainController(Node):
         self.nav.way_point_no_ori2(
             goal_array=goal_array,
             goal_or=TurtleBot4Directions.SOUTH,
-            wait_point=self.wait_point,
+            wait_point=wait_point,
             cancel=lambda: self.cancel_condition,
             on_reach=pub_work,
         )
