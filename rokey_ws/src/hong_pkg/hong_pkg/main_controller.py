@@ -45,6 +45,7 @@ class MainController(Node):
         self.start = False
         self.start2 = False
         self.cancel_condition = False
+        self.cancel_condition2 = False
         
         ns = self.get_namespace()
         self.get_logger().info(ns)
@@ -121,7 +122,7 @@ class MainController(Node):
         self.qr_id1_sub = self.create_subscription(Int32, '/qr_code_id1', self.qr_callback, qos_profile_sensor_data)
         self.qr_id2_sub = self.create_subscription(Int32, '/qr_code_id2', self.qr2_callback, qos_profile_sensor_data)
         self.working_sub = self.create_subscription(Int32, self.target_working_topic, self.working_callback, qos_profile_sensor_data)
-        self.work_pub = self.create_publisher(Int32, self.my_working_topic, 10)
+        self.working_sub2 = self.create_subscription(Int32, self.target_working_topic, self.working2_callback, qos_profile_sensor_data)
         
         self.battery_state_subscriber = self.create_subscription(BatteryState, '/battery_state', self.battery_state_callback, qos_profile_sensor_data)
         self.line1_total_subscriber = self.create_subscription(Int32, '/line1/count_total', self.line1_total_callback, 1)
@@ -250,6 +251,10 @@ class MainController(Node):
     def working_callback(self, msg: Int32):
         val = int(msg.data)
         self.cancel_condition = (val in (1, 2, 3))
+    
+    def working2_callback(self, msg: Int32):
+        val = int(msg.data)
+        self.cancel_condition2 = (val in (1, 2, 3))
 
     def start_callback(self, msg):
         with self.lock: self.start = msg.data
@@ -403,7 +408,7 @@ class MainController(Node):
                 goal_array=goal_array,
                 goal_or=TurtleBot4Directions.SOUTH,
                 wait_point=wait_point,
-                cancel=lambda: self.cancel_condition,
+                cancel=lambda: self.cancel_condition2,
                 on_reach=self.drive.robot5_send_work_finish,
             )
         self.state = RobotState.MOVE_ALIGNING 
