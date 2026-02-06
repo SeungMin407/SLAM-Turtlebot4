@@ -131,6 +131,8 @@ class MainController(Node):
         self.start_subscriber = self.create_subscription(Bool, '/box_placed1', self.start_callback, 1)
         self.start_subscriber2 = self.create_subscription(Bool, '/box_placed2', self.start_callback2, 1)
 
+        self.work_pub = self.create_publisher(Int32, self.my_working_topic, 10)
+
         self.get_logger().info("MainController & ArUco Logic Ready.")
         self.timer = self.create_timer(0.1, self.main_controller)
 
@@ -395,22 +397,20 @@ class MainController(Node):
         self.state = RobotState.STOP
 
     def move_to_goal(self, goal_array, qr_id, wait_point):
-        if self.my_robot_id == 4:
-            self.nav.way_point_no_ori2(
-                goal_array=goal_array,
-                goal_or=TurtleBot4Directions.SOUTH,
-                wait_point=wait_point,
-                cancel=lambda: self.cancel_condition,
-                on_reach=self.drive.robot4_send_work_finish,
-            )
-        else:
-            self.nav.way_point_no_ori2(
-                goal_array=goal_array,
-                goal_or=TurtleBot4Directions.SOUTH,
-                wait_point=wait_point,
-                cancel=lambda: self.cancel_condition2,
-                on_reach=self.drive.robot5_send_work_finish,
-            )
+        def pub_work():
+            msg = Int32()
+            msg.data = int(qr_id)
+            self.work_pub.publish(msg)
+            self.get_logger().info(f"[seq1 reached] published qr_id={qr_id} to {self.my_working_topic}")
+
+        self.nav.way_point_no_ori2(
+            goal_array=goal_array,
+            goal_or=TurtleBot4Directions.SOUTH,
+            wait_point=wait_point,
+            cancel=lambda: self.cancel_condition,
+            on_reach=pub_work,
+        )
+
         self.state = RobotState.MOVE_ALIGNING 
 
     def follow_move_and_wait(self, goal_array):
