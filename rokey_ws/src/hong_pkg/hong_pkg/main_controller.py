@@ -72,8 +72,8 @@ class MainController(Node):
         }
         self.qr_goal_map2 = {
             1: [(-2.90, -1.67), (-2.88, -0.47), (-2.82, 0.13), (-2.93, 0.75), (-4.73, 0.75)],
-            2: [(-2.90, -1.67), (-2.88, -0.47), (-2.82, 0.13), (-2.93, 0.75), (-4.73, 0.75), (-5.04, -5.05)],
-            3: [(-2.90, -1.67), (-2.88, -0.47), (-2.82, 0.13), (-2.93, 0.75), (-4.73, 0.75), (-5.04, -5.05), (-5.05, 2.67)],
+            2: [(-2.90, -1.67), (-2.88, -0.47), (-2.82, 0.13), (-2.93, 0.75), (-4.73, 0.75), (-5.04, 1.69)],
+            3: [(-2.90, -1.67), (-2.88, -0.47), (-2.82, 0.13), (-2.93, 0.75), (-4.73, 0.75), (-5.04, 1.69), (-5.05, 2.67)],
         }
 
         self.final_map = [[-2.92, 2.40],[-2.29, 2.47],[-1.53, 0.85],[-1.59, -0.47],[-1.61, -1.70]]
@@ -306,11 +306,11 @@ class MainController(Node):
             
             # (참고) pick_up_waiting 내부 로직에 따라 상태 반환
             if self.my_robot_id == 4:
+                # 4번 로봇: 내 라인(q1) 우선, 없으면 q2 지원
                 self.state = self.battery_proc.pick_up_waiting(self.battery_percent, q1, q2, current_status)
             else:
+                # 5번 로봇: 내 라인(q2) 우선, 없으면 q1 지원
                 self.state = self.battery_proc.pick_up_waiting(self.battery_percent, q2, q1, current_status)
-
-            self.state = RobotState.LOADING
 
         # 4. 로딩
         elif self.state == RobotState.LOADING:
