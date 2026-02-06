@@ -6,6 +6,17 @@ class RobotState(Enum):
     WAITTING = auto()        # 배터리 상태와 라인 박스 상태 체크
     LOADING = auto()         # 5초 기다리기 (박스 받는 중)
     MOVE_TO_DEST = auto()    # 목적지로 배달
+    MOVE_ALIGNING = auto()   # 목적지에 도착하면 정렬
     RETURN_TO_LINE = auto()  # 라인으로 복귀 (다음 작업 대기)
     STOP = auto()
     DOCKING = auto()
+    DONE = auto()
+
+    TEST = auto()
+
+    FIVE_WAITTING = auto()
+    ALIGNING_START = auto()
+    WAITING_NAV2 = auto()
+    ALIGNING = auto()
+    ROTATING = auto()
+    GOING_TO_GOAL = auto()

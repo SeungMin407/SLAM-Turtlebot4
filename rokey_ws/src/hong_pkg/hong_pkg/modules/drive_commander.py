@@ -1,11 +1,13 @@
 from geometry_msgs.msg import Twist
-from std_msgs.msg import Int32MultiArray
+from std_msgs.msg import Int32MultiArray, Int32
 
 class DriveCommander:
     def __init__(self, node):
         self.node = node
         self.publisher = node.create_publisher(Twist, '/robot4/cmd_vel', 10)
         self.publisher = node.create_publisher(Int32MultiArray,'/line_status',10)
+        self.work_pub = node.create_publisher(Int32, '/robot4/working', 10)
+        self.work_pub2 = node.create_publisher(Int32, '/robot5/working', 10)
 
     def send_velocity(self, linear_x, angular_z):
         msg = Twist()
@@ -38,3 +40,13 @@ class DriveCommander:
 
     def stop(self):
         self.send_velocity(0.0, 0.0)
+
+    def robot4_send_work_finish(self):
+        msg = Int32()
+        msg.data = 4
+        self.work_pub.publish(msg)
+
+    def robot5_send_work_finish(self):
+        msg = Int32()
+        msg.data = 4
+        self.work_pub2.publish(msg)
