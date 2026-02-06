@@ -403,13 +403,22 @@ class MainController(Node):
             self.work_pub.publish(msg)
             self.get_logger().info(f"[seq1 reached] published qr_id={qr_id} to {self.my_working_topic}")
 
-        self.nav.way_point_no_ori2(
-            goal_array=goal_array,
-            goal_or=TurtleBot4Directions.SOUTH,
-            wait_point=wait_point,
-            cancel=lambda: self.cancel_condition,
-            on_reach=pub_work,
-        )
+        if self.my_robot_id == 4:
+            self.nav.way_point_no_ori2(
+                goal_array=goal_array,
+                goal_or=TurtleBot4Directions.SOUTH,
+                wait_point=wait_point,
+                cancel=lambda: self.cancel_condition,
+                on_reach=pub_work,
+            )
+        else:
+            self.nav.way_point_no_ori2(
+                goal_array=goal_array,
+                goal_or=TurtleBot4Directions.SOUTH,
+                wait_point=wait_point,
+                cancel=lambda: self.cancel_condition2,
+                on_reach=pub_work,
+            )
 
         self.state = RobotState.MOVE_ALIGNING 
 
