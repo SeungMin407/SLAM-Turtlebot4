@@ -249,6 +249,7 @@ class MainController(Node):
             self.get_logger().info(f"QR Received: {msg.data}")
 
     def working_callback(self, msg: Int32):
+        self.get_logger("no!!!!!!!!!!!!")
         val = int(msg.data)
         self.cancel_condition = (val in (1, 2, 3))
 
@@ -364,7 +365,7 @@ class MainController(Node):
             self.state = RobotState.WAITTING
         elif self.state == RobotState.DOCKING:
             self.docking_wait()
-            self.state = RobotState.STOP
+            self.state = RobotState.CHARGING
         elif self.state == RobotState.STOP:
             pass
 
