@@ -253,9 +253,10 @@ class MainController(Node):
             self.get_logger().info(f"QR Received: {msg.data}")
 
     def working_callback(self, msg: Int32):
-        self.get_logger().info("cancel!!!!!!!!!!!!!!!!!!!!!!!")
-        val = int(msg.data)
-        self.cancel_condition = (val in (1, 2, 3))
+        with self.lock:
+            self.get_logger().info("cancel!!!!!!!!!!!!!!!!!!!!!!!")
+            val = int(msg.data)
+            self.cancel_condition = (val in (1, 2, 3))
 
     def start_callback(self, msg):
         with self.lock: self.start = msg.data
@@ -334,7 +335,7 @@ class MainController(Node):
             else:
                 self.follow_move_and_wait(self.qr_goal_map2)
             self.state = RobotState.GO_TO_WAIT
-            
+
         # 기다리기
         elif self.state == RobotState.GO_TO_WAIT:
             qr_id = self.qr_queue.popleft()
