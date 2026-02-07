@@ -65,15 +65,19 @@ class MainController(Node):
         self.qr_queue = deque(maxlen=10)
         
         # QR Goal Maps (생략 없이 그대로 유지)
-        self.qr_goal_map = {
-            1: [(-1.58, -1.45), (-1.59, -0.47), (-1.53, 0.85), (-2.29, 2.47), (-2.92, 2.40), (-5.05, 2.67), (-5.04, 1.69), (-4.73, 0.75)],
-            2: [(-1.58, -1.45), (-1.59, -0.47), (-1.53, 0.85), (-2.29, 2.47), (-2.92, 2.40), (-5.05, 2.67), (-5.04, 1.69)],
-            3: [(-1.58, -1.45), (-1.59, -0.47), (-1.53, 0.85), (-2.29, 2.47), (-2.92, 2.40), (-5.05, 2.67)],
+        self.qr_goal_map = [(-1.58, -1.45), (-1.59, -0.47), (-1.53, 0.85), (-2.29, 2.47), (-2.92, 2.40)]
+            
+        self.goal_map = {
+            1: [(-5.05, 2.67), (-5.04, 1.69), (-4.73, 0.75)],
+            2: [(-5.05, 2.67), (-5.04, 1.69)],
+            3: [(-5.05, 2.67)]
         }
-        self.qr_goal_map2 = {
-            1: [(-2.90, -1.67), (-2.88, -0.47), (-2.82, 0.13), (-2.93, 0.75), (-4.73, 0.75)],
-            2: [(-2.90, -1.67), (-2.88, -0.47), (-2.82, 0.13), (-2.93, 0.75), (-4.73, 0.75), (-5.04, 1.69)],
-            3: [(-2.90, -1.67), (-2.88, -0.47), (-2.82, 0.13), (-2.93, 0.75), (-4.73, 0.75), (-5.04, 1.69), (-5.05, 2.67)],
+        self.qr_goal_map2 = [(-2.90, -1.67), (-2.88, -0.47), (-2.82, 0.13), (-2.93, 0.75)]
+
+        self.goal_map2 = {
+            1: [(-4.73, 0.75)],
+            2: [(-4.73, 0.75), (-5.04, 1.69)],
+            3: [(-4.73, 0.75), (-5.04, 1.69), (-5.05, 2.67)]
         }
 
         self.final_map = [[-2.92, 2.40],[-2.29, 2.47],[-1.53, 0.85],[-1.59, -0.47],[-1.61, -1.70]]
@@ -249,6 +253,7 @@ class MainController(Node):
             self.get_logger().info(f"QR Received: {msg.data}")
 
     def working_callback(self, msg: Int32):
+        self.get_logger().info("cancel!!!!!!!!!!!!!!!!!!!!!!!")
         val = int(msg.data)
         self.cancel_condition = (val in (1, 2, 3))
 
@@ -325,9 +330,23 @@ class MainController(Node):
         # 5. 목적지 이동
         elif self.state == RobotState.MOVE_TO_DEST:
             if self.my_robot_id == 4:
-                self.check_detect(self.qr_goal_map)
+                self.follow_move_and_wait(self.qr_goal_map)
             else:
-                self.check_detect(self.qr_goal_map2)
+                self.follow_move_and_wait(self.qr_goal_map2)
+            self.state = RobotState.GO_TO_WAIT
+            
+        # 기다리기
+        elif self.state == RobotState.GO_TO_WAIT:
+            qr_id = self.qr_queue.popleft()
+            self.work_pub.publish(Int32(data=int(qr_id))) # goal position으로 보내야 함
+
+            while self.cancel_condition :
+                time.sleep(0.1)
+            if self.my_robot_id == 4:
+                self.follow_move_and_wait(self.goal_map[qr_id])
+            else:
+                self.follow_move_and_wait(self.goal_map2[qr_id])
+            self.state = RobotState.MOVE_ALIGNING
 
         # [중요] 7. 마커 정렬 단계
         elif self.state == RobotState.MOVE_ALIGNING:
