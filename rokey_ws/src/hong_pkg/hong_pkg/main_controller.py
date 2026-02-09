@@ -299,13 +299,11 @@ class MainController(Node):
         with self.lock:
             val = int(msg.data)
             self.cancel_condition4 = (val in (1, 2, 3))
-            print(f"stop4{self.cancel_condition4}")
     
     def working_callback5(self, msg: Int32):
         with self.lock:
             val = int(msg.data)
             self.cancel_condition5 = (val in (1, 2, 3))
-            print(f"stop5{self.cancel_condition5}")
 
     def start_callback(self, msg):
         with self.lock: self.start = msg.data
@@ -361,20 +359,23 @@ class MainController(Node):
         elif self.state == RobotState.WAITTING:
             print(f'라인 1 : {len(self.queue1)} queue size 1: {self.queue1}')
             print(f'라인 2 : {len(self.queue2)} queue size 1: {self.queue2}')
+            if self.current_working_line == 1:
+                self.line_status[1] = True  # 나 1번 라인 일한다!
+            else:
+                self.line_status[2] = True  # 나 2번 라인 일한다!
+            self.drive.publish_line_status(self.line_status[1], self.line_status[2])
+
             with self.lock:
                 q1 = len(self.queue1)
                 q2 = len(self.queue2)
                 curr = self.line_status.copy()
-                if self.current_working_line == 1:
-                    self.line_status[1] = True  # 나 1번 라인 일한다!
-                else:
-                    self.line_status[2] = True  # 나 2번 라인 일한다!
-                self.drive.publish_line_status(self.line_status[1], self.line_status[2])
-            
+                
             if self.my_robot_id == 4:
-                next_state = self.battery_proc.pick_up_waiting(self.battery_percent, q1, q2, curr)
+                my_start = self.start if self.my_robot_id == 4 else self.start2
+                next_state = self.battery_proc.pick_up_waiting(self.battery_percent, q1, q2, curr, my_start)
             else:
-                next_state = self.battery_proc.pick_up_waiting(self.battery_percent, q2, q1, curr)
+                target_start = self.start2 if self.my_robot_id == 4 else self.start
+                next_state = self.battery_proc.pick_up_waiting(self.battery_percent, q2, q1, curr, target_start)
             
             self.state = next_state
             
@@ -383,8 +384,13 @@ class MainController(Node):
                 self.is_helping = True
                 if self.my_robot_id == 4:
                     self.current_working_line = 2
+                    self.line_status[1] = False # 1번 라인 비움
+                    self.line_status[2] = True  # 2번 라인 점유하러 감
                 else:
                     self.current_working_line = 1
+                    self.line_status[2] = False # 2번 라인 비움
+                    self.line_status[1] = True  # 1번 라인 점유하러 감
+                self.drive.publish_line_status(self.line_status[1], self.line_status[2])
             else:
                 self.is_helping = False
                 if self.my_robot_id == 4:
@@ -393,11 +399,15 @@ class MainController(Node):
                     self.current_working_line = 2
 
         elif self.state == RobotState.GO_TO_OTHER:
-            print("other in in in in in")
             target_start = self.start2 if self.my_robot_id == 4 else self.start
             if target_start:
                 self.state = RobotState.MOVE_TO_DEST
                 self.start = False; self.start2 = False
+                if self.current_working_line == 1:
+                    self.line_status[1] = False  # 나 1번 라인 일한다!
+                else:
+                    self.line_status[2] = False  # 나 2번 라인 일한다!
+                self.drive.publish_line_status(self.line_status[1], self.line_status[2])
             else:
                 self.state = RobotState.GO_TO_OTHER
 
@@ -406,17 +416,15 @@ class MainController(Node):
             if my_start:
                 self.state = RobotState.MOVE_TO_DEST
                 self.start = False; self.start2 = False
+                if self.current_working_line == 1:
+                    self.line_status[1] = False  # 나 1번 라인 일한다!
+                else:
+                    self.line_status[2] = False  # 나 2번 라인 일한다!
+                self.drive.publish_line_status(self.line_status[1], self.line_status[2])
             else:
                 self.state = RobotState.LOADING
 
         elif self.state == RobotState.MOVE_TO_DEST:
-            with self.lock:
-                if self.current_working_line == 1:
-                    self.line_status[1] = False
-                else:
-                    self.line_status[2] = False
-                self.drive.publish_line_status(self.line_status[1], self.line_status[2])
-
             if self.my_robot_id == 4:
                 self.follow_move_and_wait(self.qr_goal_map)
             else:
@@ -449,12 +457,10 @@ class MainController(Node):
                 if self.my_robot_id == 4:
                     for i in range(10):
                         self.work_pub4.publish(Int32(data=int(qr_id)))
-                        print(f'{i}')
                         time.sleep(0.1)
                     
                     # [추가] 이동 전 정지 신호 대기
                     while self.cancel_condition4:
-                        print("real stop 44444")
                         time.sleep(0.1)
                     
                     if qr_id in target_map:
@@ -466,11 +472,9 @@ class MainController(Node):
                 else:
                     for i in range(10):
                         self.work_pub5.publish(Int32(data=int(qr_id)))
-                        print(f'{i}')
                         time.sleep(0.1)
                     
                     while self.cancel_condition5:
-                        print("real stop 555555555")
                         time.sleep(0.1)
                     
                     if qr_id in target_map:
@@ -533,40 +537,6 @@ class MainController(Node):
         while not self.nav.navigator.isTaskComplete():
             time.sleep(0.1)
 
-    def stop_and_dock(self):
-        self.get_logger().warn("🚨 Ctrl+C 감지! 모든 작업을 중단하고 도킹 장소로 복귀합니다...")
-        
-        # 1. 로직 스레드 종료 신호
-        self.is_shutdown = True 
-        
-        # 2. 현재 네비게이션 취소
-        self.nav.navigator.cancelTask()
-        self.cmd_vel_pub.publish(Twist()) # 정지 명령
-        time.sleep(1.0)
-        
-        # 3. 도킹 전 대기 장소로 이동 (픽업 장소와 동일)
-        # 로봇 ID에 따라 도킹 근처 좌표 설정
-        if self.my_robot_id == 4:
-            pre_dock_pose = [[-1.59, -0.47]]
-        else:
-            pre_dock_pose = [[-1.53, 0.85]]
-            
-        self.get_logger().info(f"🏠 도킹 대기 장소로 이동 중... {pre_dock_pose}")
-        self.nav.way_point_no_ori(pre_dock_pose)
-        
-        # [중요] KeyboardInterrupt 상태이므로 spin이 멈춰있음. 수동으로 돌려야 함.
-        while not self.nav.navigator.isTaskComplete():
-            rclpy.spin_once(self, timeout_sec=0.1)
-            
-        # 4. 도킹 시작
-        self.get_logger().info("🔌 도킹 시작!")
-        self.nav.navigator.dock()
-        
-        while not self.nav.navigator.isTaskComplete():
-            rclpy.spin_once(self, timeout_sec=0.1)
-            
-        self.get_logger().info("✅ 도킹 및 종료 완료. 시스템을 끕니다.")
-
 def get_key():
     fd = sys.stdin.fileno()
     old = termios.tcgetattr(fd)
@@ -584,12 +554,6 @@ class BeepNode(Node):
 
         self.audio_pub = self.create_publisher(AudioNoteVector, AUDIO_TOPIC, 10)
         self.em_pub = self.create_publisher(Bool, '/emergency_stop', 10)
-
-        self.get_logger().info(
-            "\n[Keyboard]\n"
-            "  Ctrl+C : 삐 + emergency_stop\n"
-            "  q      : 종료\n"
-        )
 
     def make_note(self, freq_hz: float, duration_sec: float) -> AudioNote:
         note = AudioNote()
@@ -629,13 +593,11 @@ def main(args=None):
             key = get_key()
 
             if key == '\x03':  # Ctrl+C (raw 모드)
-                beep_node.get_logger().warn("Ctrl+C -> beep + emergency_stop")
                 beep_node.beep()
                 beep_node.emergency_stop()
                 continue
 
             if key == 'q':
-                beep_node.get_logger().info("Quit requested")
                 break
 
             time.sleep(0.01)

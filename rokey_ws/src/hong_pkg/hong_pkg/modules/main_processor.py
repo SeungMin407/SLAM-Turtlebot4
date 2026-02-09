@@ -1,5 +1,6 @@
 from ..utils.nav_util import NavProcessor
 from ..enums.robot_state import RobotState
+from turtlebot4_navigation.turtlebot4_navigator import TurtleBot4Directions
 import time
 
 ROBOT_CONFIG = {
@@ -32,33 +33,37 @@ class MainProcessor:
 
         print(f"🤖 Robot {self.robot_id} 초기화 완료 (My Line: {self.my_line_id})")
 
-    def pick_up_waiting(self, battery_percent, my_queue_count, other_queue_count, line_status):
+    def pick_up_waiting(self, battery_percent, my_queue_count, other_queue_count, line_status, my_start):
         battery = battery_percent * 100 if battery_percent <= 1.0 else battery_percent
 
         if battery < 30:
             print(f'⚡ 배터리 부족({battery:.1f}%)! 도킹 장소로 이동합니다.')
-            self.move_and_wait(self.dock_coords)
+            self.move_and_wait(self.dock_coords, None)
             return RobotState.DOCKING
 
         elif my_queue_count > 0:
             if line_status.get(self.my_line_id) == True:
                 print(f"✋ 내 라인({self.my_line_id}) 작업 대기 중 (Occupied)...")
+                if my_start == True:
+                    return RobotState.LOADING
                 return RobotState.WAITTING
             return RobotState.LOADING
 
         elif other_queue_count > 0:
             if line_status.get(self.other_line_id) == True:
                 print(f"✋ {self.other_line_id}번 라인 지원 대기 중 (Occupied)...")
+                if my_start == True:
+                    return RobotState.LOADING
                 return RobotState.WAITTING
             
             time.sleep(2.0)
-            self.move_and_wait(self.support_coords)
+            self.move_and_wait(self.support_coords, TurtleBot4Directions.EAST)
             return RobotState.GO_TO_OTHER
         else:
             return RobotState.WAITTING
 
-    def move_and_wait(self, goal_array):
-        self.nav.way_point_no_ori(goal_array=goal_array)
+    def move_and_wait(self, goal_array, goal_or):
+        self.nav.way_point_no_ori(goal_array=goal_array, goal_or=goal_or)
         
         while not self.nav.navigator.isTaskComplete():
             time.sleep(0.1)
